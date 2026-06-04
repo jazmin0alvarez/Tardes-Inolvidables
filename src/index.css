@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Lora", serif;
+  --font-sans: "Lora", serif;
+  
+  --color-brand-bg: #F0F9F8;
+  --color-brand-text: #0E1C29;
+  --color-brand-sage: #105F6E;
+  --color-brand-beige: #D9ECEF;
+  --color-brand-border: #9BBCC9;
+  --color-brand-orange: #024E5C;
+  --color-brand-orange-hover: #01313B;
+  --color-brand-sand: #C5ECF0;
+}
+
+body {
+  font-family: "Lora", serif;
+}
+
+/* Custom scrollbar to match celeste/mint theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #EDF7F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #BCD9E0;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4EADBE;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Meriendas con los Nietos",
+  "description": "Página de ventas interactiva para crear tardes dulces e inolvidables con tus nietos, sin pantallas ni estrés.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
