@@ -85,77 +85,110 @@ export default function App() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden pt-12 pb-20 px-4 bg-brand-bg">
+      <section className="relative overflow-hidden pt-12 pb-20 px-4 bg-brand-bg border-b border-brand-border">
         {/* Decorative ambient elements */}
         <div className="absolute top-20 left-10 w-48 h-48 bg-brand-sand/15 rounded-full blur-3xl opacity-60"></div>
         <div className="absolute top-40 right-10 w-64 h-64 bg-brand-beige/40 rounded-full blur-3xl opacity-75"></div>
 
-        <div className="max-w-5xl mx-auto text-center relative">
-          <span className="inline-flex items-center gap-1.5 bg-brand-sand text-brand-orange text-xs sm:text-sm font-black uppercase tracking-wider px-4 py-2 rounded-full mb-6 relative border-2 border-brand-border">
-            <span className="w-2 h-2 rounded-full bg-brand-orange inline-block animate-ping"></span>
-            <span>Para abuelas argentinas dispuestas a crear recuerdos eternos</span>
-          </span>
+        <div className="max-w-6xl mx-auto relative">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Title & Text */}
+            <div className="lg:col-span-7 text-left space-y-6">
+              <span className="inline-flex items-center gap-1.5 bg-brand-sand text-brand-orange text-xs sm:text-sm font-black uppercase tracking-wider px-4 py-2 rounded-full relative border-2 border-brand-border">
+                <span className="w-2 h-2 rounded-full bg-brand-orange inline-block animate-ping"></span>
+                <span>Para abuelas argentinas dispuestas a crear recuerdos eternos</span>
+              </span>
 
-          <img 
-            src="https://i.imgur.com/3v86hWi.png" 
-            alt="¿Cómo lograr que tus nietos dejen las pantallas y de verdad sientan que tu casa es el mejor lugar del mundo?" 
-            className="w-full object-contain mx-auto max-w-4xl block"
-            referrerPolicy="no-referrer"
-          />
-          
+              <img 
+                src="https://i.imgur.com/3v86hWi.png" 
+                alt="¿Cómo lograr que tus nietos dejen las pantallas y de verdad sientan que tu casa es el mejor lugar del mundo?" 
+                className="w-full object-contain max-w-xl mx-0 block"
+                referrerPolicy="no-referrer"
+              />
 
+              <p className="text-brand-text text-base sm:text-lg font-bold leading-relaxed font-sans max-w-xl">
+                Volvé a sentir el calor de los momentos compartidos. Una guía creada desde el corazón para abuelas que quieren regalarles a sus nietos una infancia con olor a bizcochuelo recién horneado, mesas llenas de risas y juegos sobre papel que los desconecten de las pantallas, guardando para siempre en su memoria el aroma de tu casa.
+              </p>
 
-          <p className="text-brand-text text-base sm:text-xl font-bold mt-6 max-w-2xl mx-auto leading-relaxed font-sans">
-            Volvé a sentir el calor de los momentos compartidos. Una guía creada desde el corazón para abuelas que quieren regalarles a sus nietos una infancia con olor a bizcochuelo recién horneado, mesas llenas de risas y juegos sobre papel que los desconecten de las pantallas, guardando para siempre en su memoria el aroma de tu casa.
-          </p>
+              {/* Core Call To Actions */}
+              <div className="flex flex-col sm:flex-row gap-4 items-stretch max-w-md">
+                <button
+                  onClick={handleOpenCheckout}
+                  className="w-full bg-rose-200 hover:bg-rose-300 text-stone-900 font-sans font-black text-base sm:text-lg px-8 py-5 rounded-2xl shadow-md border border-rose-300 hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer uppercase hover:scale-[1.01] transform"
+                >
+                  <span>¡QUIERO MI TARDE RESUELTA!</span>
+                  <ArrowRight className="w-5 h-5 text-rose-600" />
+                </button>
+              </div>
 
-          {/* Core Call To Actions */}
-          <div className="mt-8 flex justify-center items-center max-w-xl mx-auto">
-            <button
-              onClick={handleOpenCheckout}
-              className="w-full sm:w-auto bg-rose-200 hover:bg-rose-300 text-stone-900 font-sans font-black text-base sm:text-lg px-8 py-5 rounded-2xl shadow-md border border-rose-300 hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer uppercase"
-            >
-              <span>¡QUIERO MI TARDE RESUELTA!</span>
-              <ArrowRight className="w-5 h-5 text-rose-600" />
-            </button>
-          </div>
+              {/* Social icons, value triggers */}
+              <div className="flex flex-wrap gap-2 text-xs text-brand-text font-black">
+                <span className="flex items-center gap-1 bg-white px-2.5 py-1 rounded-lg border border-brand-border shadow-xs">
+                  <CheckCircle className="w-3.5 h-3.5 text-brand-sage animate-pulse" />
+                  <span>Reembolso de 30 días</span>
+                </span>
+                <span className="flex items-center gap-1 bg-white px-2.5 py-1 rounded-lg border border-brand-border shadow-xs">
+                  <CheckCircle className="w-3.5 h-3.5 text-brand-sage" />
+                  <span>Letra grande legible</span>
+                </span>
+                <span className="flex items-center gap-1 bg-white px-2.5 py-1 rounded-lg border border-brand-border shadow-xs">
+                  <CheckCircle className="w-3.5 h-3.5 text-brand-sage" />
+                  <span>Variantes sin TACC</span>
+                </span>
+              </div>
+            </div>
 
-          {/* Social icons, value triggers */}
-          <div className="mt-8 flex flex-wrap justify-center items-center gap-4 text-sm text-brand-text font-black">
-            <span className="flex items-center gap-1 bg-white px-3 py-1.5 rounded-xl border border-brand-border shadow-sm">
-              <CheckCircle className="w-4 h-4 text-brand-sage animate-pulse" />
-              <span>Garantía de reembolso por 30 días</span>
-            </span>
-            <span className="flex items-center gap-1 bg-white px-3 py-1.5 rounded-xl border border-brand-border shadow-sm">
-              <CheckCircle className="w-4 h-4 text-brand-sage" />
-              <span>Letra extra grande y legible</span>
-            </span>
-            <span className="flex items-center gap-1 bg-white px-3 py-1.5 rounded-xl border border-brand-border shadow-sm">
-              <CheckCircle className="w-4 h-4 text-brand-sage" />
-              <span>Ideal para celíacos (sin TACC)</span>
-            </span>
+            {/* Right Column: Hero Image Grandma & Child */}
+            <div className="lg:col-span-5 relative mt-6 lg:mt-0">
+              <div className="relative mx-auto max-w-md lg:max-w-none">
+                {/* Visual Frame styled like a Polaroid or canvas frame */}
+                <div className="bg-white p-4 pb-12 rounded-3xl shadow-xl border-2 border-brand-border rotate-2 hover:rotate-0 transition-transform duration-500 relative z-10">
+                  <div className="overflow-hidden rounded-2xl aspect-[4/3] bg-brand-sand">
+                    <img 
+                      src="/src/assets/images/abuela_cocinando_1780667871539.png" 
+                      alt="Abuela dulce cocinando galletitas de chocolate con su amado nieto en una cocina iluminada"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  {/* Handwritten emotional vibe label */}
+                  <p className="font-serif font-black text-center text-lg sm:text-xl text-brand-orange mt-5 rotate-[-2deg]">
+                    ♥ Creando recuerdos eternos juntos...
+                  </p>
+                </div>
+
+                {/* Badge accent */}
+                <div className="absolute -top-4 -right-1.5 bg-rose-200 text-stone-900 border border-rose-300 font-sans font-black text-xs sm:text-sm px-4.5 py-2.5 rounded-2xl shadow-lg z-25 rotate-12 flex items-center gap-1.5 hover:scale-110 transition-transform cursor-pointer" onClick={handleOpenCheckout}>
+                  <Sparkles className="w-4 h-4 text-rose-600 fill-rose-500 animate-pulse" />
+                  <span>¡100% Práctico!</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Simulated WhatsApp Voice Note Emotional Audio Player */}
-          <div className="mt-12 bg-white border border-brand-border rounded-2xl p-4 max-w-lg mx-auto shadow-xs text-left font-sans transition-all hover:border-brand-sage">
-            <div className="flex items-center gap-3">
+          <div className="mt-16 bg-white border border-brand-border rounded-2xl p-5 max-w-2xl mx-auto shadow-md text-left font-sans transition-all hover:border-brand-sage relative">
+            <div className="absolute -top-3.5 left-6 bg-brand-sage text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-xs">
+              ★ Testimonio de abuela real
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-4 mt-1.5">
               <button
                 onClick={toggleAudioSimulation}
-                className={`w-12 h-12 rounded-full flex items-center justify-center text-white transition-all cursor-pointer ${
+                className={`w-14 h-14 rounded-full flex items-center justify-center text-white transition-all cursor-pointer shrink-0 ${
                   isAudioPlaying ? "bg-brand-sage animate-pulse" : "bg-brand-sage hover:bg-brand-sage/95"
                 }`}
                 title="Escuchar audio de abuela"
               >
-                {isAudioPlaying ? <Volume2 className="w-6 h-6 text-brand-beige" /> : <VolumeX className="w-6 h-6 text-brand-beige" />}
+                {isAudioPlaying ? <Volume2 className="w-7 h-7 text-brand-beige" /> : <VolumeX className="w-7 h-7 text-brand-beige" />}
               </button>
-              <div className="flex-1">
-                <p className="text-xs sm:text-sm font-black text-brand-text flex justify-between items-center">
+              <div className="flex-1 w-full text-center sm:text-left">
+                <p className="text-sm font-black text-brand-text flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                   <span>Mensaje de voz de Carmen (63 años, Banfield)</span>
                   <span className="text-xs text-brand-sage font-mono font-black animate-pulse">01:14</span>
                 </p>
                 <div className="relative mt-1">
                   {isAudioPlaying ? (
-                    <div className="flex items-center gap-0.5 py-1.5">
+                    <div className="flex items-center justify-center sm:justify-start gap-0.5 py-1.5">
                       <div className="h-3 w-1 bg-brand-sage animate-bounce"></div>
                       <div className="h-6 w-1 bg-brand-sage animate-bounce [animation-delay:0.1s]"></div>
                       <div className="h-4 w-1 bg-brand-sage animate-bounce [animation-delay:0.3s]"></div>
@@ -166,8 +199,8 @@ export default function App() {
                       <p className="text-xs sm:text-sm text-brand-text font-black italic ml-2">"¡Nene, me salvaste la vida con el monstruo de manzana!..."</p>
                     </div>
                   ) : (
-                    <div className="flex items-center gap-1 py-2">
-                      <div className="h-1 bg-brand-border rounded flex-1"></div>
+                    <div className="flex items-center gap-1 py-1">
+                      <div className="h-1 bg-brand-border rounded flex-1 hidden sm:block"></div>
                       <span className="text-xs sm:text-sm text-brand-text font-bold font-sans">Hacé clic para escuchar la voz de la experiencia ★</span>
                     </div>
                   )}
@@ -175,7 +208,7 @@ export default function App() {
               </div>
             </div>
             {isAudioPlaying && (
-              <p className="text-xs sm:text-sm text-brand-text leading-relaxed font-sans bg-white border-2 border-brand-orange rounded-lg p-3 mt-2.5 italic transition-all animate-fade-in font-bold">
+              <p className="text-xs sm:text-sm text-brand-text leading-relaxed font-sans bg-brand-bg border border-brand-border rounded-xl p-3.5 mt-3.5 italic transition-all animate-fade-in font-bold border-l-4 border-l-brand-sage">
                 "¡Hola querida! Mirá, te cuento... Yo estaba cansadísima, asustada porque los mellis se la pasaban gritando con TikTok. Compré este manual por el precio de dos facturas, imprimimos los dibujos y preparamos las galletas de avena. No sabés lo que nos divertimos. Estuvieron callados y felices amasando. ¡Hasta comieron manzana roja pensando que eran monstruos! Probalo de abuela a abuela, te va a cambiar las tardes."
               </p>
             )}
@@ -340,7 +373,7 @@ export default function App() {
             {/* Image side */}
             <div className="md:col-span-5 relative group overflow-hidden rounded-2xl border-2 border-brand-border bg-white p-2.5 shadow-sm">
               <img 
-                src="https://i.imgur.com/JNsEVdB.jpeg" 
+                src="/src/assets/images/frutas_divertidas_1780667898096.png" 
                 alt="Recetas saludables de frutas para niños" 
                 className="w-full h-auto object-cover rounded-xl transition-all duration-300 group-hover:scale-[1.01]"
                 referrerPolicy="no-referrer"
@@ -486,7 +519,7 @@ export default function App() {
               {
                 title: "📸 Adorable resultado en la cocina",
                 desc: "Así de hermosas y doraditas quedan las cookies con pepas de chocolate que tus nietos van a decorar con orgullo.",
-                image: "https://i.imgur.com/4OO4h8u.png"
+                image: "/src/assets/images/cookies_deliciosas_1780667886898.png"
               }
             ].map((item, idx) => (
               <div key={idx} className={`flex gap-4 items-start p-5 rounded-2xl shadow-xs border-2 ${item.image ? "bg-rose-50 border-rose-300" : "bg-white border-brand-orange"}`}>
