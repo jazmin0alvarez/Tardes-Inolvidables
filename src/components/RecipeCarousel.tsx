@@ -109,7 +109,7 @@ export default function RecipeCarousel({ onScrollToPricing }: { onScrollToPricin
               {(selectedRecipeIdx === 1 || selectedRecipeIdx === 3) && (
                 <div className="mb-4 overflow-hidden rounded-xl border-4 border-rose-200 bg-rose-50 max-h-44 flex items-center justify-center relative shadow-xs">
                   <img
-                    src="/src/assets/images/cookies_deliciosas_1780667886898.png"
+                    src="https://i.imgur.com/4OO4h8u.png"
                     alt="Cookies deliciosas crujientes"
                     className="w-full h-full object-cover max-h-44 hover:scale-[1.02] transition-transform duration-300"
                     referrerPolicy="no-referrer"
@@ -189,7 +189,7 @@ export default function RecipeCarousel({ onScrollToPricing }: { onScrollToPricin
           <div className="lg:col-span-5 bg-white border border-brand-border rounded-3xl p-4 flex flex-col justify-between shadow-xs hover:border-brand-sage transition-all relative overflow-hidden">
             <div className="bg-brand-bg/60 p-2.5 rounded-2xl border border-brand-border/60">
               <img 
-                src="/src/assets/images/frutas_divertidas_1780667898096.png" 
+                src="https://i.imgur.com/JNsEVdB.jpeg" 
                 alt="Caritas y monstruos de frutas divertidas para niños" 
                 className="w-full h-56 sm:h-72 object-cover rounded-xl shadow-xs hover:scale-[1.01] transition-transform duration-300"
                 referrerPolicy="no-referrer"

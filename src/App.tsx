@@ -145,7 +145,7 @@ export default function App() {
                 <div className="bg-white p-4 pb-12 rounded-3xl shadow-xl border-2 border-brand-border rotate-2 hover:rotate-0 transition-transform duration-500 relative z-10">
                   <div className="overflow-hidden rounded-2xl aspect-[4/3] bg-brand-sand">
                     <img 
-                      src="/src/assets/images/abuela_cocinando_1780667871539.png" 
+                      src="https://i.imgur.com/KKmO91W.png" 
                       alt="Abuela dulce cocinando galletitas de chocolate con su amado nieto en una cocina iluminada"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
                       referrerPolicy="no-referrer"
@@ -373,7 +373,7 @@ export default function App() {
             {/* Image side */}
             <div className="md:col-span-5 relative group overflow-hidden rounded-2xl border-2 border-brand-border bg-white p-2.5 shadow-sm">
               <img 
-                src="/src/assets/images/frutas_divertidas_1780667898096.png" 
+                src="https://i.imgur.com/JNsEVdB.jpeg" 
                 alt="Recetas saludables de frutas para niños" 
                 className="w-full h-auto object-cover rounded-xl transition-all duration-300 group-hover:scale-[1.01]"
                 referrerPolicy="no-referrer"
@@ -519,7 +519,7 @@ export default function App() {
               {
                 title: "📸 Adorable resultado en la cocina",
                 desc: "Así de hermosas y doraditas quedan las cookies con pepas de chocolate que tus nietos van a decorar con orgullo.",
-                image: "/src/assets/images/cookies_deliciosas_1780667886898.png"
+                image: "https://i.imgur.com/4OO4h8u.png"
               }
             ].map((item, idx) => (
               <div key={idx} className={`flex gap-4 items-start p-5 rounded-2xl shadow-xs border-2 ${item.image ? "bg-rose-50 border-rose-300" : "bg-white border-brand-orange"}`}>
