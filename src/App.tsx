@@ -138,27 +138,48 @@ export default function App() {
               </div>
             </div>
 
-            {/* Right Column: Hero Image Grandma & Child */}
-            <div className="lg:col-span-5 relative mt-6 lg:mt-0">
-              <div className="relative mx-auto max-w-md lg:max-w-none">
-                {/* Visual Frame styled like a Polaroid or canvas frame */}
-                <div className="bg-white p-4 pb-12 rounded-3xl shadow-xl border-2 border-brand-border rotate-2 hover:rotate-0 transition-transform duration-500 relative z-10">
-                  <div className="overflow-hidden rounded-2xl aspect-[4/3] bg-brand-sand">
+            {/* Right Column: Hero Image Grandma & Child + Product Mockup Stack */}
+            <div className="lg:col-span-5 relative mt-12 lg:mt-0 min-h-[460px] sm:min-h-[500px] lg:min-h-[440px]">
+              <div className="relative w-full h-full">
+                {/* 1. Grandma & Child Polaroid Image (Cozy Memories Layer) */}
+                <div 
+                  className="absolute top-0 left-2 w-[72%] bg-white p-3 pb-8 rounded-2xl shadow-md border-2 border-brand-border -rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-500 z-10 hover:z-30 cursor-pointer group"
+                  onClick={handleOpenCheckout}
+                >
+                  <div className="overflow-hidden rounded-xl aspect-[4/3] bg-brand-sand">
                     <img 
                       src="https://i.imgur.com/KKmO91W.png" 
-                      alt="Abuela dulce cocinando galletitas de chocolate con su amado nieto en una cocina iluminada"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
+                      alt="Abuela dulce cocinando galletitas de chocolate con su amado nieto"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                       referrerPolicy="no-referrer"
                     />
                   </div>
-                  {/* Handwritten emotional vibe label */}
-                  <p className="font-serif font-black text-center text-lg sm:text-xl text-brand-orange mt-5 rotate-[-2deg]">
-                    ♥ Creando recuerdos eternos juntos...
+                  <p className="font-serif font-black text-center text-xs sm:text-sm text-brand-orange mt-2">
+                    ♥ Recuerdos inolvidables
+                  </p>
+                </div>
+
+                {/* 2. New Cover Image (Fabulous Main Resource Layer) */}
+                <div 
+                  className="absolute top-24 right-2 w-[78%] bg-white p-3 pb-10 rounded-2xl shadow-2xl border-2 border-brand-orange rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 z-20 hover:z-30 cursor-pointer group"
+                  onClick={handleOpenCheckout}
+                >
+                  <div className="overflow-hidden rounded-xl aspect-[4/3] bg-brand-sand shadow-inner relative">
+                    <img 
+                      src="https://i.imgur.com/bZcJIkg.png" 
+                      alt="Portada de Meriendas con los Nietos de la Abuela Práctica"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
+                  </div>
+                  <p className="font-serif font-black text-center text-sm text-brand-text mt-3">
+                    📖 ¡El Kit Completo de Meriendas Inteligentes!
                   </p>
                 </div>
 
                 {/* Badge accent */}
-                <div className="absolute -top-4 -right-1.5 bg-rose-200 text-stone-900 border border-rose-300 font-sans font-black text-xs sm:text-sm px-4.5 py-2.5 rounded-2xl shadow-lg z-25 rotate-12 flex items-center gap-1.5 hover:scale-110 transition-transform cursor-pointer" onClick={handleOpenCheckout}>
+                <div className="absolute -top-6 -right-1 bg-rose-200 text-stone-900 border border-rose-300 font-sans font-black text-xs sm:text-sm px-4 py-2.5 rounded-2xl shadow-lg z-30 rotate-12 flex items-center gap-1.5 hover:scale-110 transition-transform cursor-pointer" onClick={handleOpenCheckout}>
                   <Sparkles className="w-4 h-4 text-rose-600 fill-rose-500 animate-pulse" />
                   <span>¡100% Práctico!</span>
                 </div>
