@@ -38,7 +38,7 @@ export default function App() {
   };
 
   const handleOpenCheckout = () => {
-    setIsCheckoutOpen(true);
+    window.open("https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables", "_blank");
   };
 
   const scrollToSection = (id: string) => {
@@ -74,13 +74,15 @@ export default function App() {
             <button onClick={() => scrollToSection("que-incluye")} className="hover:text-brand-orange transition cursor-pointer underline decoration-brand-sage decoration-2">¿Qué incluye el Kit?</button>
           </div>
 
-         <button
-            onClick={handleOpenCheckout}
-            className="bg-rose-200 hover:bg-rose-300 text-stone-900 font-black text-xs sm:text-sm py-2.5 px-5 rounded-xl shadow-md border border-rose-300 transition-all flex items-center gap-1.5 cursor-pointer uppercase font-sans"
+         <a
+            href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-rose-200 hover:bg-rose-300 text-stone-900 font-black text-xs sm:text-sm py-2.5 px-5 rounded-xl shadow-md border border-rose-300 transition-all flex items-center gap-1.5 cursor-pointer uppercase font-sans no-underline"
           >
             <Sparkles className="w-4 h-4 text-rose-600 fill-rose-500" />
             <span>QUIERO MI KIT</span>
-          </button>
+          </a>
         </div>
       </header>
 
@@ -112,13 +114,15 @@ export default function App() {
 
               {/* Core Call To Actions */}
               <div className="flex flex-col sm:flex-row gap-4 items-stretch max-w-md">
-                <button
-                  onClick={handleOpenCheckout}
-                  className="w-full bg-rose-200 hover:bg-rose-300 text-stone-900 font-sans font-black text-base sm:text-lg px-8 py-5 rounded-2xl shadow-md border border-rose-300 hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer uppercase hover:scale-[1.01] transform"
+                <a
+                  href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-rose-200 hover:bg-rose-300 text-stone-900 font-sans font-black text-base sm:text-lg px-8 py-5 rounded-2xl shadow-md border border-rose-300 hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer uppercase hover:scale-[1.01] transform no-underline"
                 >
                   <span>¡QUIERO MI TARDE RESUELTA!</span>
                   <ArrowRight className="w-5 h-5 text-rose-600" />
-                </button>
+                </a>
               </div>
 
               {/* Social icons, value triggers */}
@@ -142,9 +146,11 @@ export default function App() {
             <div className="lg:col-span-5 relative mt-12 lg:mt-0 min-h-[460px] sm:min-h-[500px] lg:min-h-[440px]">
               <div className="relative w-full h-full">
                 {/* 1. Grandma & Child Polaroid Image (Cozy Memories Layer) */}
-                <div 
-                  className="absolute top-0 left-2 w-[72%] bg-white p-3 pb-8 rounded-2xl shadow-md border-2 border-brand-border -rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-500 z-10 hover:z-30 cursor-pointer group"
-                  onClick={handleOpenCheckout}
+                <a 
+                  href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-0 left-2 w-[72%] bg-white p-3 pb-8 rounded-2xl shadow-md border-2 border-brand-border -rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-500 z-10 hover:z-30 cursor-pointer group block no-underline"
                 >
                   <div className="overflow-hidden rounded-xl aspect-[4/3] bg-brand-sand">
                     <img 
@@ -157,12 +163,14 @@ export default function App() {
                   <p className="font-serif font-black text-center text-xs sm:text-sm text-brand-orange mt-2">
                     ♥ Recuerdos inolvidables
                   </p>
-                </div>
+                </a>
 
                 {/* 2. New Cover Image (Fabulous Main Resource Layer) */}
-                <div 
-                  className="absolute top-24 right-2 w-[78%] bg-white p-3 pb-10 rounded-2xl shadow-2xl border-2 border-brand-orange rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 z-20 hover:z-30 cursor-pointer group"
-                  onClick={handleOpenCheckout}
+                <a 
+                  href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-24 right-2 w-[78%] bg-white p-3 pb-10 rounded-2xl shadow-2xl border-2 border-brand-orange rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 z-20 hover:z-30 cursor-pointer group block no-underline"
                 >
                   <div className="overflow-hidden rounded-xl aspect-[4/3] bg-brand-sand shadow-inner relative">
                     <img 
@@ -176,13 +184,18 @@ export default function App() {
                   <p className="font-serif font-black text-center text-sm text-brand-text mt-3">
                     📖 ¡El Kit Completo de Meriendas Inteligentes!
                   </p>
-                </div>
+                </a>
 
                 {/* Badge accent */}
-                <div className="absolute -top-6 -right-1 bg-rose-200 text-stone-900 border border-rose-300 font-sans font-black text-xs sm:text-sm px-4 py-2.5 rounded-2xl shadow-lg z-30 rotate-12 flex items-center gap-1.5 hover:scale-110 transition-transform cursor-pointer" onClick={handleOpenCheckout}>
+                <a 
+                  href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute -top-6 -right-1 bg-rose-200 text-stone-900 border border-rose-300 font-sans font-black text-xs sm:text-sm px-4 py-2.5 rounded-2xl shadow-lg z-30 rotate-12 flex items-center gap-1.5 hover:scale-110 transition-transform cursor-pointer block no-underline"
+                >
                   <Sparkles className="w-4 h-4 text-rose-600 fill-rose-500 animate-pulse" />
                   <span>¡100% Práctico!</span>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -307,12 +320,14 @@ export default function App() {
           </p>
 
           <div className="mt-8">
-            <button
-              onClick={handleOpenCheckout}
-              className="bg-rose-200 hover:bg-rose-300 text-stone-900 font-sans font-black text-sm sm:text-base py-4 px-8 rounded-2xl shadow-md border border-rose-300 transition-all uppercase cursor-pointer"
+            <a
+              href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-rose-200 hover:bg-rose-300 text-stone-900 font-sans font-black text-sm sm:text-base py-4 px-8 rounded-2xl shadow-md border border-rose-300 transition-all uppercase cursor-pointer no-underline"
             >
               ⭐ SÍ, QUIERO CREAR RECUERDOS ETERNOS EN LA COCINA
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -690,12 +705,14 @@ export default function App() {
           </div>
 
           <div className="mt-8 text-center">
-            <button
-              onClick={handleOpenCheckout}
-              className="bg-rose-200 hover:bg-rose-300 text-stone-900 font-black text-sm sm:text-base py-4 px-8 rounded-2xl shadow-md border border-rose-300 hover:shadow-lg transition-all cursor-pointer inline-flex items-center gap-1.5"
+            <a
+              href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-rose-200 hover:bg-rose-300 text-stone-900 font-black text-sm sm:text-base py-4 px-8 rounded-2xl shadow-md border border-rose-300 hover:shadow-lg transition-all cursor-pointer inline-flex items-center gap-1.5 no-underline"
             >
               <span>¡QUIERO EMPEZAR MI MEJOR TARDE CON ELLOS!</span>
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -733,12 +750,14 @@ export default function App() {
 
           {/* Buttons and warnings */}
           <div className="space-y-3 font-sans">
-            <button
-              onClick={handleOpenCheckout}
-              className="w-full bg-rose-200 hover:bg-rose-300 text-stone-900 font-black text-sm sm:text-lg py-4 px-8 rounded-2xl shadow-md border border-rose-300 transition-all transform hover:scale-[1.01] uppercase cursor-pointer"
+            <a
+              href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-rose-200 hover:bg-rose-300 text-stone-900 font-black text-sm sm:text-lg py-4 px-8 rounded-2xl shadow-md border border-rose-300 transition-all transform hover:scale-[1.01] uppercase cursor-pointer text-center no-underline"
             >
               🛒 QUIERO MI TARDE RESUELTA POR COMPLETO
-            </button>
+            </a>
             <p className="text-xs text-brand-text font-bold leading-relaxed max-w-sm mx-auto">
               Confirmación inmediata de Mercado Pago. Al hacer clic se abrirá nuestro formulario inteligente seguro para configurar tu copia al correo.
             </p>
@@ -857,12 +876,14 @@ export default function App() {
           </p>
 
           <div className="mt-8 space-y-4">
-            <button
-              onClick={handleOpenCheckout}
-              className="bg-rose-200 hover:bg-rose-300 text-stone-900 font-black text-sm sm:text-base py-4 px-8 rounded-2xl shadow-md border border-rose-300 transition-all uppercase cursor-pointer"
+            <a
+              href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-rose-200 hover:bg-rose-300 text-stone-900 font-black text-sm sm:text-base py-4 px-8 rounded-2xl shadow-md border border-rose-300 transition-all uppercase cursor-pointer no-underline"
             >
               ✨ SÍ, QUIERO DE CORAZÓN ESTE RECUERDO RECIÉN HORNEADO
-            </button>
+            </a>
             
             <p className="text-brand-orange text-xs font-bold uppercase tracking-wide">
               ¡Dales la tarde dorada que se merecen!

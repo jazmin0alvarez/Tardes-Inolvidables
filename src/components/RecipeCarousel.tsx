@@ -141,13 +141,15 @@ export default function RecipeCarousel({ onScrollToPricing }: { onScrollToPricin
                 <Check className="w-4 h-4 text-brand-sage font-bold" />
                 <span>Letra extra grande y paso a paso para abuelas</span>
               </span>
-              <button
-                onClick={onScrollToPricing}
-                className="inline-flex items-center gap-1.5 text-xs sm:text-sm bg-rose-200 hover:bg-rose-300 text-stone-900 font-black py-2 px-4 rounded-full border border-rose-300 cursor-pointer shadow-xs transition-colors self-start sm:self-auto"
+              <a
+                href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs sm:text-sm bg-rose-200 hover:bg-rose-300 text-stone-900 font-black py-2 px-4 rounded-full border border-rose-300 cursor-pointer shadow-xs transition-colors self-start sm:self-auto text-center no-underline font-sans"
               >
                 <Lock className="w-3.5 h-3.5 text-rose-700" />
                 <span>Desbloquear receta completa</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
