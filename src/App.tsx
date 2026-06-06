@@ -522,10 +522,6 @@ export default function App() {
                 desc: "Explicaciones de budines esponjosos y cookies mágicas de preparación rápida (15-20 min) que salen ricas sí o sí." 
               },
               { 
-                title: "🧒 Guía “Manitos en Acción” por edades", 
-                desc: "Asignación exacta de tareas seguras para nietos de 2 a 12 años, evitando accidentes y maximizando la diversión segura." 
-              },
-              { 
                 title: "🎨 Dibujos Anti-Pantallas imprimibles", 
                 desc: "Colección de hojas listas para imprimir en blanco y negro (consumen mínima tinta). El laberinto, dinosaurios y más." 
               },

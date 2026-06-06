@@ -152,7 +152,7 @@ export const FAQS = [
   {
     id: "faq-5",
     question: "¿Qué pasa si mis nietos son chiquitos (ej. de 2 o 3 años)?",
-    answer: "El kit incluye la Guía 'Manitos en Acción' escalada por edades: te explicamos qué tarea darle al chiquito de 2 años (como aplastar la banana o tirar las chispitas de chocolate) y cuál darle al de 7 años (como amasar sus cookies o armar los animalitos de fruta) para que todos se sientan importantes sin ningún peligro."
+    answer: "¡Está pensado justamente para ellos! En las recetas te sugerimos ideas paso a paso para que los más chiquitos de 2 o 3 años puedan participar de forma segura (como aplastar la banana o agregar las chispas de chocolate) y los más grandes se encarguen de amasar o decorar, logrando que todos colaboren sin peligro."
   },
   {
     id: "faq-6",
