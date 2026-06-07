@@ -113,18 +113,6 @@ export const REVIEWS_DATA: GrandparentReview[] = [
     date: "Hace 12 días",
     relationship: "Abuela de Toti (4) y Juani (7)",
     verified: true
-  },
-  {
-    id: "rev-4",
-    name: "Mirta Varela",
-    age: 64,
-    location: "Rosario, Santa Fe",
-    avatarColor: "bg-blue-100 text-blue-700",
-    comment: "Mis nietos mellizos tienen celiaquía, así que las recetas sin TACC añadidas me vinieron bárbaro. Es un gran alivio cocinar algo que sé con total seguridad que les hace bien y que encima les fascina comer. El diploma de Mini Chef lo imprimimos y lo tienen en la heladera.",
-    stars: 5,
-    date: "Hace 15 días",
-    relationship: "Abuela de Facu y Benja (5)",
-    verified: true
   }
 ];
 

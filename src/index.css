@@ -33,3 +33,19 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #4EADBE;
 }
+
+@keyframes attention-blink {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  50% {
+    transform: scale(1.05);
+    background-color: #a7f3d0; /* lighter emerald */
+    box-shadow: 0 0 20px 6px rgba(16, 185, 129, 0.6); /* bright emerald glow */
+  }
+}
+
+.animate-attention {
+  animation: attention-blink 1.5s infinite ease-in-out;
+}

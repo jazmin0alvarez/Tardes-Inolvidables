@@ -158,7 +158,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                 <p className="text-sm font-black text-brand-text">Kit "Meriendas con los Nietos"</p>
                 <p className="text-xs font-bold text-brand-text/80">Recetas + Dibujos + Frutas divertidas (Acceso de por vida)</p>
               </div>
-              <p className="text-base sm:text-lg font-black text-brand-orange bg-white px-2 py-1 rounded-lg border border-brand-border">$5.990 ARS</p>
+              <p className="text-base sm:text-lg font-black text-brand-orange bg-white px-2 py-1 rounded-lg border border-brand-border">$5.999 ARS</p>
             </div>
 
             {/* Payment Method selector */}
@@ -273,11 +273,11 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
 
             {/* Total price anchor & Submit */}
             <button
-              type="submit"
-              className="w-full bg-rose-200 hover:bg-rose-300 text-stone-900 font-black py-4 px-6 rounded-2xl shadow-md border border-rose-300 hover:shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer text-lg uppercase mt-2"
+               type="submit"
+               className="w-full bg-emerald-200 hover:bg-emerald-300 text-stone-900 font-black py-4 px-6 rounded-2xl shadow-md border border-emerald-300 hover:shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer text-lg uppercase mt-2"
             >
-              <Lock className="w-6 h-6 text-rose-600" />
-              Pagar $5.990 ARS y Recibir Ahora
+              <Lock className="w-6 h-6 text-emerald-700" />
+              Pagar $5.999 ARS y Recibir Ahora
             </button>
 
             {/* Secure seals */}
@@ -334,7 +334,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                 <button
                   type="button"
                   onClick={() => triggerDownloadSimulate("Meriendas_Nietos_Recetas.pdf")}
-                  className="bg-rose-200 hover:bg-rose-300 text-stone-900 text-xs sm:text-sm font-black px-4 py-2 rounded-lg border border-rose-300 transition cursor-pointer shadow-xs"
+                  className="bg-emerald-200 hover:bg-emerald-300 text-stone-900 text-xs sm:text-sm font-black px-4 py-2 rounded-lg border border-emerald-300 transition cursor-pointer shadow-xs"
                 >
                   Descargar
                 </button>
@@ -351,7 +351,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
                 <button
                   type="button"
                   onClick={() => triggerDownloadSimulate("Fichas_Anti_Pantallas.pdf")}
-                  className="bg-rose-200 hover:bg-rose-300 text-stone-900 text-xs sm:text-sm font-black px-4 py-2 rounded-lg border border-rose-300 transition cursor-pointer shadow-xs"
+                  className="bg-emerald-200 hover:bg-emerald-300 text-stone-900 text-xs sm:text-sm font-black px-4 py-2 rounded-lg border border-emerald-300 transition cursor-pointer shadow-xs"
                 >
                   Descargar
                 </button>
@@ -367,7 +367,7 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
               <button
                 type="button"
                 onClick={onClose}
-                className="w-full bg-rose-200 hover:bg-rose-300 text-stone-900 text-sm sm:text-base font-black py-4 px-6 rounded-2xl border border-rose-300 hover:scale-[1.01] transition-all cursor-pointer shadow-sm uppercase animate-pulse"
+                className="w-full bg-emerald-200 hover:bg-emerald-300 text-stone-900 text-sm sm:text-base font-black py-4 px-6 rounded-2xl border border-emerald-300 hover:scale-[1.01] transition-all cursor-pointer shadow-sm uppercase animate-pulse"
               >
                 Volver a la Página Principal
               </button>

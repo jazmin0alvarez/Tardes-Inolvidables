@@ -107,7 +107,7 @@ export default function PlanningCalculator({ onScrollToPricing }: { onScrollToPr
                   onClick={() => setNietosCount(item.val as any)}
                   className={`py-3 px-1.5 rounded-xl text-xs sm:text-sm font-black border-2 transition-all cursor-pointer ${
                     nietosCount === item.val
-                      ? "bg-rose-200 border-rose-300 text-stone-900 shadow-sm"
+                      ? "bg-emerald-200 border-emerald-300 text-stone-900 shadow-sm"
                       : "bg-white border-brand-border text-brand-text hover:bg-brand-bg/50"
                   }`}
                 >
@@ -133,7 +133,7 @@ export default function PlanningCalculator({ onScrollToPricing }: { onScrollToPr
                   onClick={() => setAges(item.val)}
                   className={`py-3 px-1.5 rounded-xl text-xs sm:text-sm font-black border-2 transition-all cursor-pointer ${
                     ages === item.val
-                      ? "bg-rose-200 border-rose-300 text-stone-900 shadow-sm"
+                      ? "bg-emerald-200 border-emerald-300 text-stone-900 shadow-sm"
                       : "bg-white border-brand-border text-brand-text hover:bg-brand-bg/50"
                   }`}
                 >
@@ -161,7 +161,7 @@ export default function PlanningCalculator({ onScrollToPricing }: { onScrollToPr
                 onClick={() => setEnergy(item.val)}
                 className={`p-3.5 rounded-xl border-2 text-left transition-all cursor-pointer ${
                   energy === item.val
-                    ? "bg-rose-100 border-rose-300 text-stone-900 ring-2 ring-rose-200/20"
+                    ? "bg-emerald-50 border-emerald-300 text-stone-900 ring-2 ring-emerald-200/20"
                     : "bg-white border-brand-border text-brand-text hover:bg-brand-bg/50"
                 }`}
               >
@@ -175,9 +175,9 @@ export default function PlanningCalculator({ onScrollToPricing }: { onScrollToPr
         {/* Action Button */}
         <button
           type="submit"
-          className="w-full bg-rose-200 hover:bg-rose-300 text-stone-900 font-sans font-black py-4 px-6 rounded-2xl shadow-md border border-rose-300 transition-all flex items-center justify-center gap-2 cursor-pointer text-base sm:text-lg uppercase"
+          className="w-full bg-emerald-200 hover:bg-emerald-300 text-stone-900 font-sans font-black py-4 px-6 rounded-2xl shadow-md border border-emerald-300 transition-all flex items-center justify-center gap-2 cursor-pointer text-base sm:text-lg uppercase"
         >
-          <Smile className="w-6 h-6 text-rose-600" />
+          <Smile className="w-6 h-6 text-emerald-700" />
           ¡VER RECORRIDO DE NUESTRA TARDE DULCE!
         </button>
       </form>
@@ -288,7 +288,7 @@ export default function PlanningCalculator({ onScrollToPricing }: { onScrollToPr
               href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-1.5 bg-rose-200 hover:bg-rose-300 text-stone-900 text-sm sm:text-base font-black py-3 px-6 rounded-2xl shadow border border-rose-300 hover:scale-101 transition-all cursor-pointer uppercase text-center no-underline font-sans"
+              className="mt-4 inline-flex items-center gap-1.5 bg-emerald-200 hover:bg-emerald-300 text-stone-900 text-sm sm:text-base font-black py-3 px-6 rounded-2xl shadow border border-emerald-300 hover:scale-101 transition-all cursor-pointer uppercase text-center no-underline font-sans"
             >
               ¡QUIERO ESTA TARDE RESUELTA POR COMPLETO! →
             </a>
