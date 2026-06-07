@@ -133,7 +133,7 @@ export default function App() {
                   { 
                     title: "🌾 2 recetas alternativas sin TACC", 
                     desc: "Especialmente añadidas para nietos con intolerancias alimenticias o celiaquía sin perder un solo gramo del delicioso sabor de siempre.",
-                    logo: "https://i.imgur.com/RTXryqa.png"
+                    logo: "https://i.imgur.com/1XkrKvV.png"
                   }
                 ].map((item, idx) => (
                   <div key={idx} className={`flex gap-3 items-start p-4 rounded-xl shadow-xs border ${
