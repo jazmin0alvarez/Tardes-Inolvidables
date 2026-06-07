@@ -40,7 +40,7 @@ export default function App() {
           {/* Main Cover Image at the absolute top of the content ("al principio de todo como portada principal, tal cual sin recortes") */}
           <div className="relative inline-block mx-auto mb-4">
             <a 
-              href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+              href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white p-3 pb-8 rounded-3xl shadow-2xl border-2 border-brand-orange hover:scale-[1.02] transition-all duration-500 cursor-pointer group block no-underline relative max-w-xs sm:max-w-sm md:max-w-md mx-auto"
@@ -58,7 +58,7 @@ export default function App() {
 
             {/* Sparkles Badge */}
             <a 
-              href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+              href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
               target="_blank"
               rel="noopener noreferrer"
               className="absolute -top-4 -right-4 bg-emerald-200 text-stone-900 border border-emerald-300 font-sans font-black text-xs sm:text-sm px-4 py-2.5 rounded-2xl shadow-lg z-30 rotate-12 flex items-center gap-1.5 hover:scale-110 transition-transform cursor-pointer block no-underline"
@@ -85,7 +85,7 @@ export default function App() {
             {/* Core Call To Actions */}
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center max-w-md mx-auto pt-2">
               <a
-                href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+                href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-emerald-200 hover:bg-emerald-300 text-stone-900 font-sans font-black text-base sm:text-lg px-8 py-5 rounded-2xl shadow-xl border-2 border-emerald-400 hover:shadow-2xl transition-all flex flex-col items-center justify-center gap-2 cursor-pointer uppercase hover:scale-[1.03] transform no-underline text-center animate-attention"
@@ -238,7 +238,7 @@ export default function App() {
 
           <div className="mt-8 flex flex-col items-center justify-center">
             <a
-              href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+              href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex flex-col items-center justify-center bg-emerald-200 hover:bg-emerald-300 text-stone-900 font-sans font-black text-sm sm:text-lg px-8 py-5 rounded-2xl shadow-xl border-2 border-emerald-400 hover:shadow-2xl transition-all transform hover:scale-[1.03] uppercase cursor-pointer no-underline animate-attention gap-2"
@@ -355,7 +355,7 @@ export default function App() {
 
           <div className="mt-8 text-center">
             <a
-              href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+              href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-emerald-200 hover:bg-emerald-300 text-stone-900 font-black text-sm sm:text-base py-4 px-8 rounded-2xl shadow-md border border-emerald-300 hover:shadow-lg transition-all cursor-pointer inline-flex items-center gap-1.5 no-underline animate-attention"
@@ -404,7 +404,7 @@ export default function App() {
           {/* Buttons and warnings */}
           <div className="space-y-4 font-sans">
             <a
-              href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+              href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full bg-emerald-200 hover:bg-emerald-300 text-stone-900 font-sans font-black text-base sm:text-xl py-5 px-8 rounded-2xl shadow-xl border-2 border-emerald-400 hover:shadow-2xl transition-all transform hover:scale-[1.03] uppercase cursor-pointer text-center no-underline animate-attention"
@@ -460,7 +460,7 @@ export default function App() {
           </div>
 
          <a
-            href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+            href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-emerald-200 hover:bg-emerald-300 text-stone-900 font-black text-xs sm:text-sm py-2.5 px-5 rounded-xl shadow-md border border-emerald-300 transition-all flex items-center gap-1.5 cursor-pointer uppercase font-sans no-underline"

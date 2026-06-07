@@ -142,7 +142,7 @@ export default function RecipeCarousel({ onScrollToPricing }: { onScrollToPricin
                 <span>Letra extra grande y paso a paso para abuelas</span>
               </span>
               <a
-                href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+                href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-xs sm:text-sm bg-rose-200 hover:bg-rose-300 text-stone-900 font-black py-2 px-4 rounded-full border border-rose-300 cursor-pointer shadow-xs transition-colors self-start sm:self-auto text-center no-underline font-sans"

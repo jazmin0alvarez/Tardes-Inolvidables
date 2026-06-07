@@ -285,7 +285,7 @@ export default function PlanningCalculator({ onScrollToPricing }: { onScrollToPr
               Abuela, organizar esto no requiere meses de práctica ni complicarte con manuales aburridos. Todo el material detallado, las láminas, las recetas explicadas paso a paso con letra bien grande y los moldes listos están compilados para vos en el kit digital completo por una inversión menor a lo que cuesta un kilo de facturas en el barrio.
             </p>
             <a
-              href="https://h8v1v6-g7.myshopify.com/products/tardes-inolvidables"
+              href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-1.5 bg-emerald-200 hover:bg-emerald-300 text-stone-900 text-sm sm:text-base font-black py-3 px-6 rounded-2xl shadow border border-emerald-300 hover:scale-101 transition-all cursor-pointer uppercase text-center no-underline font-sans"
