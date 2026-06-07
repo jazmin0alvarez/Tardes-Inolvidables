@@ -132,8 +132,7 @@ export default function App() {
                   },
                   { 
                     title: "🌾 2 recetas alternativas sin TACC", 
-                    desc: "Especialmente añadidas para nietos con intolerancias alimenticias o celiaquía sin perder un solo gramo del delicioso sabor de siempre.",
-                    logo: "https://i.imgur.com/1XkrKvV.png"
+                    desc: "Especialmente añadidas para nietos con intolerancias alimenticias o celiaquía sin perder un solo gramo del delicioso sabor de siempre."
                   }
                 ].map((item, idx) => (
                   <div key={idx} className={`flex gap-3 items-start p-4 rounded-xl shadow-xs border ${
@@ -156,14 +155,6 @@ export default function App() {
                       ) : (
                         <div className="flex gap-3 mt-1 items-center justify-between">
                           <p className="text-brand-text text-xs sm:text-sm leading-relaxed font-semibold flex-1">{item.desc}</p>
-                          {item.logo && (
-                            <img 
-                              src={item.logo} 
-                              alt="Símbolo Sin TACC" 
-                              className="w-14 h-14 sm:w-16 sm:h-16 object-contain bg-white p-1 rounded-xl border border-brand-orange/25 shrink-0 shadow-xs" 
-                              referrerPolicy="no-referrer"
-                            />
-                          )}
                         </div>
                       )}
                     </div>
