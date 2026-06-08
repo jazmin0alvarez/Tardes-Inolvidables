@@ -221,9 +221,11 @@ export default function App() {
 
             {/* Right Box: Pinterest Inline Video Interactive Simulator */}
             <div className="lg:col-span-6 flex flex-col items-center">
-              <div 
-                onClick={() => setIsCheckoutOpen(true)}
-                className="w-full max-w-sm bg-stone-900 rounded-[32px] p-3 shadow-2xl border-4 border-stone-850 relative group cursor-pointer hover:scale-[1.02] active:scale-[0.99] transition-all duration-300"
+              <a 
+                href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full max-w-sm bg-stone-900 rounded-[32px] p-3 shadow-2xl border-4 border-stone-850 relative group cursor-pointer hover:scale-[1.02] active:scale-[0.99] transition-all duration-300 block no-underline"
               >
                 {/* Camera Notch decoration */}
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-stone-850 rounded-full z-20"></div>
@@ -271,16 +273,18 @@ export default function App() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </a>
               
               <div className="mt-4 text-center font-sans space-y-3.5 w-full">
-                <button 
-                  onClick={() => setIsCheckoutOpen(true)}
-                  className="w-auto inline-flex items-center gap-2.5 bg-yellow-300 hover:bg-yellow-400 text-stone-950 font-black text-sm sm:text-base px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.03] active:scale-[0.98] uppercase tracking-wider border-2 border-yellow-500 cursor-pointer select-none font-sans"
+                <a 
+                  href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-auto inline-flex items-center gap-2.5 bg-yellow-300 hover:bg-yellow-400 text-stone-950 font-black text-sm sm:text-base px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.03] active:scale-[0.98] uppercase tracking-wider border-2 border-yellow-500 cursor-pointer select-none font-sans no-underline"
                 >
                   <Play className="w-4 h-4 text-stone-950 fill-stone-950" />
                   <span>VER VIDEO EN GRANDE</span>
-                </button>
+                </a>
                 <p className="text-xs text-brand-text font-black max-w-xs mx-auto leading-relaxed">
                   Así se ve el área de manualidades: hacés clic, mirás el video explicativo y a jugar con tus nietos.
                 </p>
