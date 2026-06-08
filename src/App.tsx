@@ -280,10 +280,10 @@ export default function App() {
                   href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-auto inline-flex items-center gap-2.5 bg-yellow-300 hover:bg-yellow-400 text-stone-950 font-black text-sm sm:text-base px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.03] active:scale-[0.98] uppercase tracking-wider border-2 border-yellow-500 cursor-pointer select-none font-sans no-underline"
+                  className="w-auto inline-flex items-center justify-center gap-2.5 bg-yellow-300 hover:bg-yellow-400 text-stone-950 font-black text-xs sm:text-base px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.03] active:scale-[0.98] uppercase tracking-wider border-2 border-yellow-500 cursor-pointer select-none font-sans no-underline"
                 >
-                  <Play className="w-4 h-4 text-stone-950 fill-stone-950" />
-                  <span>VER VIDEO EN GRANDE</span>
+                  <Sparkles className="w-4 h-4 text-stone-950 fill-stone-950 shrink-0" />
+                  <span>DESBLOQUÉA TU TARDE INCREÍBLE POR $5.999</span>
                 </a>
                 <p className="text-xs text-brand-text font-black max-w-xs mx-auto leading-relaxed">
                   Así se ve el área de manualidades: hacés clic, mirás el video explicativo y a jugar con tus nietos.
