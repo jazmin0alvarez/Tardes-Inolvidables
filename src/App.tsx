@@ -222,53 +222,52 @@ export default function App() {
             {/* Right Box: Pinterest Inline Video Interactive Simulator */}
             <div className="lg:col-span-6 flex flex-col items-center">
               <div 
-                onClick={() => setIsVideoOpen(true)}
+                onClick={() => setIsCheckoutOpen(true)}
                 className="w-full max-w-sm bg-stone-900 rounded-[32px] p-3 shadow-2xl border-4 border-stone-850 relative group cursor-pointer hover:scale-[1.02] active:scale-[0.99] transition-all duration-300"
               >
                 {/* Camera Notch decoration */}
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-stone-850 rounded-full z-20"></div>
                 
-                {/* Simulated Pinterest screen with explicit Play Button Overlay */}
+                {/* Simulated Pinterest screen with Play Button Overlay */}
                 <div className="bg-stone-950 rounded-[24px] overflow-hidden relative border border-stone-800 flex flex-col items-center" style={{ minHeight: "420px" }}>
                   <div className="w-full py-3 bg-stone-900 text-center text-[11px] text-stone-400 font-bold border-b border-stone-800 select-none font-sans flex justify-center items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-                    <span>📱 REPRODUCTOR INTEGRADO</span>
+                    <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+                    <span>📱 ACCESO DE VÍDEOS EN TU COMPRA</span>
                   </div>
                   
-                  {/* Pinterest Widget IFrame Preview */}
-                  <div className="w-full h-[380px] overflow-hidden flex items-center justify-center bg-white relative">
-                    <iframe 
-                      src="https://assets.pinterest.com/ext/embed.html?id=1134836806101017348" 
-                      height="380" 
-                      width="100%" 
-                      frameBorder="0" 
-                      scrolling="no" 
-                      style={{ border: "none", overflow: "hidden", pointerEvents: "none" }}
-                      className="opacity-95"
-                      title="Manualidades con niños Pinterest Video"
-                    ></iframe>
+                  {/* High Quality Video Preview Thumbnail linked directly to Checkout as fallback */}
+                  <div className="w-full h-[380px] overflow-hidden flex items-center justify-center bg-stone-900 relative">
+                    <img 
+                      src="https://i.imgur.com/tF9mtt9.png" 
+                      alt="Manualidades Creativas Paso a Paso" 
+                      className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
+                      referrerPolicy="no-referrer"
+                    />
 
                     {/* Dark glass play overlay */}
-                    <div className="absolute inset-0 bg-stone-950/40 group-hover:bg-stone-950/20 transition-all duration-300 flex flex-col items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-yellow-300 text-stone-950 border-4 border-white flex items-center justify-center shadow-2xl transform group-hover:scale-115 transition-transform duration-300 animate-pulse">
-                        <Play className="w-7 h-7 fill-stone-950 text-stone-950 ml-1" />
+                    <div className="absolute inset-0 bg-stone-950/45 group-hover:bg-stone-950/30 transition-all duration-300 flex flex-col items-center justify-center p-4">
+                      <div className="w-16 h-16 rounded-full bg-yellow-300 text-stone-950 border-4 border-white flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
+                        <Play className="w-7 h-7 fill-stone-950 text-stone-950 ml-1 animate-pulse" />
                       </div>
-                      <span className="bg-stone-900/90 text-white font-black text-xs px-4 py-2 rounded-xl mt-4 tracking-widest border border-stone-750 shadow-md">
-                        HACÉ CLIC PARA REPRODUCIR ▶
+                      <span className="bg-brand-orange text-white font-black text-xs px-4 py-2 rounded-full mt-4 tracking-wider border border-brand-orange shadow-lg animate-bounce">
+                        🔓 DESBLOQUEAR CLASES EN VIDEO ▶
                       </span>
+                      <p className="text-[10px] text-stone-200 mt-2 text-center font-bold font-sans max-w-[200px] leading-snug">
+                        Hacé clic para activar todo el material por solo $5.999
+                      </p>
                     </div>
                   </div>
 
                   {/* Aesthetic bar */}
                   <div className="w-full p-3 bg-stone-900 border-t border-stone-800 flex justify-between items-center px-4 self-stretch font-sans">
                     <div className="flex items-center gap-1.5">
-                      <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
+                      <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
                       <span className="text-[10px] text-stone-300 font-extrabold uppercase tracking-widest font-sans">
                         Paso a paso en Video
                       </span>
                     </div>
-                    <span className="text-[10px] font-black text-rose-400 uppercase tracking-wider">
-                      Ver en Grande 📺
+                    <span className="text-[10px] font-black text-yellow-300 uppercase tracking-wider">
+                      Adelanto Real ⭐
                     </span>
                   </div>
                 </div>
@@ -276,7 +275,7 @@ export default function App() {
               
               <div className="mt-4 text-center font-sans space-y-3.5 w-full">
                 <button 
-                  onClick={() => setIsVideoOpen(true)}
+                  onClick={() => setIsCheckoutOpen(true)}
                   className="w-auto inline-flex items-center gap-2.5 bg-yellow-300 hover:bg-yellow-400 text-stone-950 font-black text-sm sm:text-base px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.03] active:scale-[0.98] uppercase tracking-wider border-2 border-yellow-500 cursor-pointer select-none font-sans"
                 >
                   <Play className="w-4 h-4 text-stone-950 fill-stone-950" />
