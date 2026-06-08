@@ -95,7 +95,7 @@ export default function App() {
                   <ArrowRight className="w-5 h-5 text-emerald-700 shrink-0 animate-bounce" />
                 </div>
                 <span className="bg-yellow-300 text-stone-950 font-black text-xl sm:text-2xl px-6 py-2 rounded-full shadow-md tracking-wider border-2 border-yellow-400 inline-block scale-105 my-1 hover:scale-110 transition-transform">
-                  🔥 POR SOLO $5.999 🔥
+                  🔥 POR SOLO $5.990 🔥
                 </span>
               </button>
             </div>
@@ -119,7 +119,7 @@ export default function App() {
                     image: "https://i.imgur.com/pq0g1ym.png"
                   },
                   { 
-                    title: "🎨 Dibujos Anti-Pantallas imprimibles", 
+                    title: "🎨 Dibujos Anti-Pantallas listos para imprimir", 
                     image: "https://i.imgur.com/sqKiEue.png",
                     bgClass: "bg-yellow-50/90 border-yellow-250",
                     imageScale: "scale-105 sm:scale-110 py-1"
@@ -255,7 +255,7 @@ export default function App() {
                         🔓 DESBLOQUEAR CLASES EN VIDEO ▶
                       </span>
                       <p className="text-[10px] text-stone-200 mt-2 text-center font-bold font-sans max-w-[200px] leading-snug">
-                        Hacé clic para activar todo el material por solo $5.999
+                        Hacé clic para activar todo el material por solo $5.990
                       </p>
                     </div>
                   </div>
@@ -283,7 +283,7 @@ export default function App() {
                   className="w-auto inline-flex items-center justify-center gap-2.5 bg-yellow-300 hover:bg-yellow-400 text-stone-950 font-black text-xs sm:text-base px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.03] active:scale-[0.98] uppercase tracking-wider border-2 border-yellow-500 cursor-pointer select-none font-sans no-underline"
                 >
                   <Sparkles className="w-4 h-4 text-stone-950 fill-stone-950 shrink-0" />
-                  <span>DESBLOQUÉA TU TARDE INCREÍBLE POR $5.999</span>
+                  <span>DESBLOQUÉA TU TARDE INCREÍBLE POR $5.990</span>
                 </a>
                 <p className="text-xs text-brand-text font-black max-w-xs mx-auto leading-relaxed">
                   Así se ve el área de manualidades: hacés clic, mirás el video explicativo y a jugar con tus nietos.
@@ -366,7 +366,7 @@ export default function App() {
                 <ArrowRight className="w-5 h-5 text-emerald-700 shrink-0 animate-bounce" />
               </div>
               <span className="bg-yellow-300 text-stone-950 font-black text-lg sm:text-xl px-5 py-1.5 rounded-full shadow-md tracking-wider border-2 border-yellow-400 inline-block scale-105 my-1 hover:scale-110 transition-transform">
-                🔥 POR SOLO $5.999 🔥
+                🔥 POR SOLO $5.990 🔥
               </span>
             </a>
           </div>
@@ -501,7 +501,7 @@ export default function App() {
             <p className="text-brand-text text-base sm:text-xl line-through font-extrabold pb-1">Valor regular: $11.980 pesos</p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-3 mt-2">
               <span className="bg-yellow-100 text-brand-orange text-6xl sm:text-7xl font-black tracking-tight px-6 py-2 rounded-2xl border-2 border-brand-orange/30 shadow-inner inline-block">
-                $5.999
+                $5.990
               </span>
               <span className="text-brand-text text-xl font-black uppercase font-sans tracking-wide">
                 pesos argentinos
@@ -525,7 +525,7 @@ export default function App() {
                 <ArrowRight className="w-6 h-6 text-emerald-700 shrink-0 animate-bounce" />
               </div>
               <span className="bg-yellow-300 text-stone-950 font-black text-lg sm:text-xl px-6 py-1.5 rounded-full shadow-md tracking-wider border-2 border-yellow-400 inline-block scale-105 my-1 hover:scale-110 transition-transform">
-                🔥 POR SOLO $5.999 🔥
+                🔥 POR SOLO $5.990 🔥
               </span>
             </a>
             <p className="text-xs text-brand-text font-bold leading-relaxed max-w-sm mx-auto">
