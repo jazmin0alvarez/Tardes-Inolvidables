@@ -6,7 +6,6 @@ import {
   Star
 } from "lucide-react";
 import HeaderBanner from "./components/HeaderBanner";
-import PlanningCalculator from "./components/PlanningCalculator";
 import CheckoutModal from "./components/CheckoutModal";
 import { REVIEWS_DATA } from "./data";
 
@@ -84,10 +83,8 @@ export default function App() {
 
             {/* Core Call To Actions */}
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center max-w-md mx-auto pt-2">
-              <a
-                href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => scrollToSection("comprar")}
                 className="w-full bg-emerald-200 hover:bg-emerald-300 text-stone-900 font-sans font-black text-base sm:text-lg px-8 py-5 rounded-2xl shadow-xl border-2 border-emerald-400 hover:shadow-2xl transition-all flex flex-col items-center justify-center gap-2 cursor-pointer uppercase hover:scale-[1.03] transform no-underline text-center animate-attention"
               >
                 <div className="flex items-center gap-2 text-stone-950 font-black tracking-wide">
@@ -97,7 +94,7 @@ export default function App() {
                 <span className="bg-yellow-300 text-stone-950 font-black text-xl sm:text-2xl px-6 py-2 rounded-full shadow-md tracking-wider border-2 border-yellow-400 inline-block scale-105 my-1 hover:scale-110 transition-transform">
                   🔥 POR SOLO $5.999 🔥
                 </span>
-              </a>
+              </button>
             </div>
 
             {/* QUÉ INCLUYE (Repositioned here to be directly below the button, styled beautifully as a white rounded box) */}
@@ -243,13 +240,6 @@ export default function App() {
               </span>
             </a>
           </div>
-        </div>
-      </section>
-
-      {/* INTERACTIVE CALENDAR PLATFORM */}
-      <section className="py-12 px-4 bg-white border-t border-b border-brand-border">
-        <div className="max-w-5xl mx-auto">
-          <PlanningCalculator onScrollToPricing={() => scrollToSection("comprar")} />
         </div>
       </section>
 
@@ -446,7 +436,6 @@ export default function App() {
 
           <div className="flex flex-wrap justify-center items-center gap-4 text-xs sm:text-sm font-black text-brand-text">
             <button onClick={() => scrollToSection("problema")} className="hover:text-brand-orange transition cursor-pointer underline decoration-brand-sage decoration-2">El Desafío</button>
-            <button onClick={() => scrollToSection("calculator-section")} className="hover:text-brand-orange transition cursor-pointer underline decoration-brand-sage decoration-2">Planificador</button>
             <button onClick={() => scrollToSection("que-incluye")} className="hover:text-brand-orange transition cursor-pointer underline decoration-brand-sage decoration-2">¿Qué incluye el Kit?</button>
           </div>
 
