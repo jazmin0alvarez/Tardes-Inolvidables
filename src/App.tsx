@@ -3,7 +3,9 @@ import {
   Heart, 
   Sparkles, 
   ArrowRight, 
-  Star
+  Star,
+  X,
+  Play
 } from "lucide-react";
 import HeaderBanner from "./components/HeaderBanner";
 import CheckoutModal from "./components/CheckoutModal";
@@ -12,6 +14,7 @@ import { REVIEWS_DATA } from "./data";
 export default function App() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [waNotify, setWaNotify] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const triggerWaSimulate = () => {
     setWaNotify(true);
@@ -128,6 +131,12 @@ export default function App() {
                     imageScale: "scale-105 sm:scale-110 py-1"
                   },
                   { 
+                    title: "🎁 BONUS: Videos de manualidades con cosas de la casa", 
+                    image: "https://i.imgur.com/tF9mtt9.png",
+                    bgClass: "bg-emerald-50/90 border-emerald-300",
+                    imageScale: "scale-100 py-1"
+                  },
+                  { 
                     title: "🌾 2 recetas alternativas sin TACC", 
                     desc: "Especialmente añadidas para nietos con intolerancias alimenticias o celiaquía sin perder un solo gramo del delicioso sabor de siempre."
                   }
@@ -160,6 +169,124 @@ export default function App() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* NUEVA SECCIÓN DE MANUALIDADES SÚPER CREATIVAS CON VIDEO DE PINTEREST */}
+      <section id="actividades" className="py-16 px-4 bg-gradient-to-b from-white to-brand-bg text-brand-text border-b border-brand-border">
+        <div className="max-w-5xl mx-auto font-sans">
+          <div className="text-center mb-12">
+            <span className="text-xs uppercase font-black tracking-widest text-emerald-700 bg-emerald-100 px-4 py-2 rounded-full border border-emerald-300 inline-block animate-pulse">
+              🎁 REGALO ADICIONAL EXCLUSIVO
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl text-brand-text font-black mt-3 leading-tight">
+              ✂️ Manualidades Súper Creativas <br className="hidden sm:inline" />
+              <span className="text-brand-orange">con lo que ya tenés en casa</span>
+            </h2>
+            <p className="text-brand-text/90 mt-3 text-base sm:text-lg font-bold leading-relaxed max-w-2xl mx-auto">
+              No gastes una fortuna en jugueterías ni en materiales costosos. Te enseñamos a usar rollos de papel higiénico, tapitas, cartones de huevos o medias huérfanas para pasar tardes de pura risa y creación.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Left Box: Creative Ideas List */}
+            <div className="lg:col-span-6 space-y-6">
+              <div className="bg-white border-2 border-brand-orange rounded-3xl p-6 shadow-md relative overflow-hidden flex flex-col">
+                <span className="absolute -top-3 left-6 bg-brand-orange text-white text-xs font-black px-3 py-1 rounded-full uppercase z-10">
+                  FÁCILES Y DIVERTIDAS
+                </span>
+                
+                <h4 className="font-serif text-xl sm:text-2xl font-black text-brand-text mb-3 mt-1">
+                  ¿Qué van a crear juntos?
+                </h4>
+
+                {/* Real Activities Image provided by User */}
+                <div className="rounded-2xl border-2 border-brand-border overflow-hidden relative shadow-xs bg-brand-sand group">
+                  <img 
+                    src="https://i.imgur.com/tF9mtt9.png" 
+                    alt="Manualidades Creativas a Crear Juntos" 
+                    className="w-full h-auto object-cover max-h-[280px] sm:max-h-[320px] transition-transform duration-500 group-hover:scale-[1.02]"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+                <div className="mt-5 pt-4 border-t border-brand-border/40 bg-zinc-50 -mx-6 -mb-6 p-5 rounded-b-3xl text-center">
+                  <p className="text-xs sm:text-sm text-brand-text font-black leading-snug font-sans">
+                     10 ideas para hacer manualidades geniales
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Box: Pinterest Inline Video Interactive Simulator */}
+            <div className="lg:col-span-6 flex flex-col items-center">
+              <div 
+                onClick={() => setIsVideoOpen(true)}
+                className="w-full max-w-sm bg-stone-900 rounded-[32px] p-3 shadow-2xl border-4 border-stone-850 relative group cursor-pointer hover:scale-[1.02] active:scale-[0.99] transition-all duration-300"
+              >
+                {/* Camera Notch decoration */}
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-stone-850 rounded-full z-20"></div>
+                
+                {/* Simulated Pinterest screen with explicit Play Button Overlay */}
+                <div className="bg-stone-950 rounded-[24px] overflow-hidden relative border border-stone-800 flex flex-col items-center" style={{ minHeight: "420px" }}>
+                  <div className="w-full py-3 bg-stone-900 text-center text-[11px] text-stone-400 font-bold border-b border-stone-800 select-none font-sans flex justify-center items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                    <span>📱 REPRODUCTOR INTEGRADO</span>
+                  </div>
+                  
+                  {/* Pinterest Widget IFrame Preview */}
+                  <div className="w-full h-[380px] overflow-hidden flex items-center justify-center bg-white relative">
+                    <iframe 
+                      src="https://assets.pinterest.com/ext/embed.html?id=1134836806101017348" 
+                      height="380" 
+                      width="100%" 
+                      frameBorder="0" 
+                      scrolling="no" 
+                      style={{ border: "none", overflow: "hidden", pointerEvents: "none" }}
+                      className="opacity-95"
+                      title="Manualidades con niños Pinterest Video"
+                    ></iframe>
+
+                    {/* Dark glass play overlay */}
+                    <div className="absolute inset-0 bg-stone-950/40 group-hover:bg-stone-950/20 transition-all duration-300 flex flex-col items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-yellow-300 text-stone-950 border-4 border-white flex items-center justify-center shadow-2xl transform group-hover:scale-115 transition-transform duration-300 animate-pulse">
+                        <Play className="w-7 h-7 fill-stone-950 text-stone-950 ml-1" />
+                      </div>
+                      <span className="bg-stone-900/90 text-white font-black text-xs px-4 py-2 rounded-xl mt-4 tracking-widest border border-stone-750 shadow-md">
+                        HACÉ CLIC PARA REPRODUCIR ▶
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Aesthetic bar */}
+                  <div className="w-full p-3 bg-stone-900 border-t border-stone-800 flex justify-between items-center px-4 self-stretch font-sans">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
+                      <span className="text-[10px] text-stone-300 font-extrabold uppercase tracking-widest font-sans">
+                        Paso a paso en Video
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-black text-rose-400 uppercase tracking-wider">
+                      Ver en Grande 📺
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-4 text-center font-sans space-y-3.5 w-full">
+                <button 
+                  onClick={() => setIsVideoOpen(true)}
+                  className="w-auto inline-flex items-center gap-2.5 bg-yellow-300 hover:bg-yellow-400 text-stone-950 font-black text-sm sm:text-base px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.03] active:scale-[0.98] uppercase tracking-wider border-2 border-yellow-500 cursor-pointer select-none font-sans"
+                >
+                  <Play className="w-4 h-4 text-stone-950 fill-stone-950" />
+                  <span>VER VIDEO EN GRANDE</span>
+                </button>
+                <p className="text-xs text-brand-text font-black max-w-xs mx-auto leading-relaxed">
+                  Así se ve el área de manualidades: hacés clic, mirás el video explicativo y a jugar con tus nietos.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -475,6 +602,63 @@ export default function App() {
         isOpen={isCheckoutOpen} 
         onClose={() => setIsCheckoutOpen(false)} 
       />
+
+      {/* FULL-SCREEN VIDEO LIGHTBOX MODAL */}
+      {isVideoOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          {/* Backdrop with elegant blur */}
+          <div 
+            className="absolute inset-0 bg-stone-950/85 backdrop-blur-md transition-opacity duration-300 cursor-pointer animate-fade-in"
+            onClick={() => setIsVideoOpen(false)}
+          ></div>
+          
+          {/* Main Modal Container */}
+          <div className="relative bg-stone-950 border-2 border-brand-orange w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl z-10 max-h-[95vh] flex flex-col transform transition-all duration-300 scale-100">
+            {/* Header of Modal */}
+            <div className="bg-stone-90 px-5 py-4 border-b border-stone-850 flex justify-between items-center bg-stone-900">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-400 animate-pulse"></span>
+                <span className="font-serif font-black text-white text-xs sm:text-sm tracking-wide">
+                  ✂️ Manualidades con tus Nietos (Video)
+                </span>
+              </div>
+              <button 
+                onClick={() => setIsVideoOpen(false)}
+                className="text-stone-450 hover:text-white bg-stone-800 hover:bg-stone-750 p-1.5 rounded-full transition-all cursor-pointer"
+                title="Cerrar"
+              >
+                <X className="w-4 h-4 text-white" />
+              </button>
+            </div>
+
+            {/* Video Body */}
+            <div className="flex-1 bg-white relative flex items-center justify-center overflow-auto" style={{ minHeight: "440px" }}>
+              <iframe 
+                src="https://assets.pinterest.com/ext/embed.html?id=1134836806101017348" 
+                height="440" 
+                width="100%" 
+                frameBorder="0" 
+                scrolling="no" 
+                style={{ border: "none", width: "100%", height: "440px", overflow: "hidden" }}
+                title="Pinterest Video Player Grande"
+              ></iframe>
+            </div>
+
+            {/* Footer with actions */}
+            <div className="bg-stone-900 p-4 border-t border-stone-850 flex flex-col sm:flex-row gap-3 justify-between items-center text-center sm:text-left">
+              <span className="text-stone-300 text-xs font-black font-sans leading-tight max-w-xs">
+                💡 ¡Paso a paso para inspirarte antes de empezar con los chicos!
+              </span>
+              <button 
+                onClick={() => setIsVideoOpen(false)}
+                className="bg-yellow-300 hover:bg-yellow-400 text-stone-950 font-black text-xs px-5 py-2.5 rounded-full shadow-md uppercase tracking-wider border-2 border-yellow-500 cursor-pointer transition-all self-stretch sm:self-auto"
+              >
+                CERRAR REPRODUCTOR ×
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
