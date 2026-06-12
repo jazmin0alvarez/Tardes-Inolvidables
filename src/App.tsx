@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { 
   Heart, 
   Sparkles, 
   ArrowRight, 
   Star,
   X,
-  Play
+  Play,
+  Clock,
+  Gift,
+  ShieldCheck,
+  HelpCircle,
+  ChevronDown,
+  ChevronUp
 } from "lucide-react";
 import HeaderBanner from "./components/HeaderBanner";
 import CheckoutModal from "./components/CheckoutModal";
@@ -15,6 +21,35 @@ export default function App() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [waNotify, setWaNotify] = useState(false);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
+  // Real-time scarcity countdown to midnight
+  const [timeLeft, setTimeLeft] = useState({ hours: 3, minutes: 14, seconds: 45 });
+  
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      const endOfDay = new Date();
+      endOfDay.setHours(23, 59, 59, 999);
+      let diff = endOfDay.getTime() - now.getTime();
+      
+      if (diff < 0) diff = 0;
+      
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      
+      return { hours, minutes, seconds };
+    };
+
+    setTimeLeft(calculateTimeLeft());
+
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const triggerWaSimulate = () => {
     setWaNotify(true);
@@ -420,6 +455,118 @@ export default function App() {
         </div>
       </section>
 
+      {/* SECCIÓN NUEVA: BONOS DE REGALO COMPLEMENTARIOS Y EXCLUSIVOS */}
+      <section id="bonos" className="py-16 px-4 bg-gradient-to-b from-[#FDFBF7] to-[#FAF6F0] border-b border-brand-border text-brand-text">
+        <div className="max-w-4xl mx-auto font-sans">
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center gap-1.5 bg-yellow-100 text-brand-orange text-xs sm:text-sm font-black uppercase tracking-wider px-4 py-2 rounded-full border-2 border-brand-orange/20 animate-pulse">
+              <Gift className="w-4 h-4 text-brand-orange fill-brand-orange" />
+              <span>🎁 SÓLO POR HOY: REGALOS EXCLUSIVOS 100% BONIFICADOS</span>
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl text-brand-text font-black mt-4 leading-tight">
+              Tres herramientas extra para una <br />
+              <span className="text-[#10b981]">experiencia completa y sin fricción</span>
+            </h2>
+            <p className="text-[#4b5563] mt-3 text-base sm:text-lg font-bold leading-relaxed max-w-2xl mx-auto">
+              Diseñé estos complementos especiales que no forman parte del manual básico, pero que considero críticos para que tus tardes fluyan con absoluta alegría, conexión y economía.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {/* Bono 1 */}
+            <div className="bg-white border-2 border-brand-orange rounded-3xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition-all relative">
+              <span className="absolute -top-3 right-6 bg-brand-orange text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
+                BONO #1 • REGALO
+              </span>
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-yellow-100 flex items-center justify-center text-2xl">
+                  📙
+                </div>
+                <h4 className="font-serif text-lg font-black text-brand-text leading-snug">
+                  Guía de Conversaciones Mágicas para la Cocina
+                </h4>
+                <p className="text-[#4b5563] text-xs sm:text-sm font-medium leading-relaxed">
+                  Evitá silencios incómodos y el clásico "bien" cuando les preguntás por la escuela. Te doy 33 disparadores de charlas inolvidables diseñados por psicólogas infantiles para conversar mientras baten o esperan el horneado.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-dashed border-[#e5e7eb] flex justify-between items-center bg-zinc-50/50 -mx-6 -mb-6 p-4 rounded-b-3xl">
+                <span className="text-[#9ca3af] line-through text-xs font-bold font-sans">Precio regular: $3.500</span>
+                <span className="text-[#10b981] font-black text-sm">¡100% GRATIS!</span>
+              </div>
+            </div>
+
+            {/* Bono 2 */}
+            <div className="bg-white border-2 border-emerald-300 rounded-3xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition-all relative">
+              <span className="absolute -top-3 right-6 bg-[#10b981] text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
+                BONO #2 • REGALO
+              </span>
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-2xl">
+                  🎓
+                </div>
+                <h4 className="font-serif text-lg font-black text-brand-text leading-snug">
+                  Diplomas Oficiales "Pequeño Gran Chef" listos para imprimir
+                </h4>
+                <p className="text-[#4b5563] text-xs sm:text-sm font-medium leading-relaxed">
+                  El broche de oro para coronar una tarde perfecta. Te enviamos 5 hermosos diseños ilustrados listos para completar con sus nombres y colgar en la heladera. ¡Imaginate la carita de orgullo absoluto de tus nietos al recibir su diploma firmado de tus manos! Un recuerdo físico que atesorarán por siempre con orgullo.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-dashed border-[#e5e7eb] flex justify-between items-center bg-zinc-50/50 -mx-6 -mb-6 p-4 rounded-b-3xl">
+                <span className="text-[#9ca3af] line-through text-xs font-bold font-sans">Precio regular: $2.500</span>
+                <span className="text-[#10b981] font-black text-sm text-right">¡100% GRATIS!</span>
+              </div>
+            </div>
+
+            {/* Bono 3 */}
+            <div className="bg-white border-2 border-brand-orange rounded-3xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition-all relative">
+              <span className="absolute -top-3 right-6 bg-brand-orange text-white text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
+                BONO #3 • REGALO
+              </span>
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-yellow-100 flex items-center justify-center text-2xl">
+                  🛒
+                </div>
+                <h4 className="font-serif text-lg font-black text-brand-text leading-snug">
+                  Lista de Compras Inteligente y Organizada
+                </h4>
+                <p className="text-[#4b5563] text-xs sm:text-sm font-medium leading-relaxed">
+                  No des vueltas por el almacén ni gastes de más a ciegas. Una plantilla exprés con las cantidades exactas para que vayas de compras sabiendo exactamente lo que necesitás según la receta elegida. Súper rápida y ordenada.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-dashed border-[#e5e7eb] flex justify-between items-center bg-zinc-50/50 -mx-6 -mb-6 p-4 rounded-b-3xl">
+                <span className="text-[#9ca3af] line-through text-xs font-bold font-sans">Precio regular: $1.800</span>
+                <span className="text-[#10b981] font-black text-sm">¡100% GRATIS!</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Valuate container block */}
+          <div className="bg-white border-4 border-dashed border-emerald-400 rounded-3xl p-6 text-center shadow-sm">
+            <p className="text-sm font-bold text-[#4b5563]">
+              Llevando el Kit Digital hoy, te ahorrás <span className="text-brand-orange font-black text-base">$7.800 pesos</span> adicionales en estos tres regalos de alto valor. ¡Y todo tuyo por el mismo costo consolidado de <strong className="text-stone-900">$5.990</strong> pesos!
+            </p>
+          </div>
+
+          {/* CTA Estratégico 1 (Después de los bonos) */}
+          <div className="mt-10 text-center">
+            <a
+              href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex flex-col items-center justify-center bg-emerald-200 hover:bg-emerald-300 text-stone-900 font-sans font-black text-sm sm:text-base px-8 py-5 rounded-2xl shadow-xl border-2 border-emerald-400 hover:shadow-2xl transition-all transform hover:scale-[1.03] uppercase cursor-pointer no-underline animate-attention gap-1.5"
+            >
+              <div className="flex items-center gap-2">
+                <span>🎁 ¡QUIERO RECLAMAR EL KIT + LOS TRES REGALOS COMPLETOS!</span>
+                <ArrowRight className="w-5 h-5 text-emerald-700 shrink-0 animate-bounce" />
+              </div>
+              <span className="bg-yellow-300 text-stone-950 font-black text-xs sm:text-sm px-4 py-1.5 rounded-full shadow-md tracking-wider border border-yellow-400 inline-block mt-1">
+                SOLO $5.990 pesos • Oferta Limitada
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* TESTIMONIAL FEED BACKINGS */}
       <section className="py-16 px-4 bg-brand-bg border-t border-b border-brand-border text-brand-text">
         <div className="max-w-4xl mx-auto font-sans">
@@ -477,6 +624,82 @@ export default function App() {
         </div>
       </section>
 
+      {/* SECCIÓN NUEVA: NO ES PARA TI SI... (EXCLUSIÓN ESTRATÉGICA) */}
+      <section className="py-16 px-4 bg-[#FAF8F5] border-t border-b border-brand-border text-brand-text">
+        <div className="max-w-4xl mx-auto font-sans">
+          <div className="text-center mb-10">
+            <span className="text-xs uppercase font-black tracking-widest text-brand-orange bg-brand-sand px-3.5 py-1.5 border border-brand-orange/20 rounded-full inline-block">
+              ¿Es para vos este método? Léelo con sinceridad
+            </span>
+            <h2 className="font-serif text-2xl sm:text-4xl text-brand-text font-black mt-3">
+              Para quién <span className="text-red-500">NO</span> es el Kit Digital
+            </h2>
+            <p className="text-[#4b5563] text-sm sm:text-base font-bold mt-2">
+              Queremos ser 100% honestas con vos. Este no es el típico manual comercial masivo...
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div className="bg-white border-2 border-stone-200 p-6 rounded-3xl shadow-xs relative">
+              <span className="text-red-500 font-extrabold text-2xl absolute top-5 right-5 select-none">❌</span>
+              <h4 className="font-serif text-lg font-black text-brand-text pr-8">
+                Si preferís el "silencio de la pantalla"
+              </h4>
+              <p className="text-[#4b5563] text-xs sm:text-sm font-semibold mt-2 leading-relaxed">
+                No es para vos si preferís mantener a los chicos quietitos mirando la tablet de fondo para que no hagan ruido ni pregunten nada. Este kit es interactivo, requiere tu complicidad y que te enchastres un poquito los dedos con harina y amor.
+              </p>
+            </div>
+
+            <div className="bg-white border-2 border-stone-200 p-6 rounded-3xl shadow-xs relative">
+              <span className="text-red-500 font-extrabold text-2xl absolute top-5 right-5 select-none">❌</span>
+              <h4 className="font-serif text-lg font-black text-brand-text pr-8">
+                Si buscás repostería francesa compleja
+              </h4>
+              <p className="text-[#4b5563] text-xs sm:text-sm font-semibold mt-2 leading-relaxed">
+                No es para vos si buscás un libro técnico de pastelería profesional o ingredientes de alta gama importados que salen una fortuna. Amamos las recetas rústicas, nutritivas y sencillas que un nene de 5 años puede amasar con felicidad.
+              </p>
+            </div>
+
+            <div className="bg-white border-2 border-stone-200 p-6 rounded-3xl shadow-xs relative">
+              <span className="text-red-500 font-extrabold text-2xl absolute top-5 right-5 select-none">❌</span>
+              <h4 className="font-serif text-lg font-black text-brand-text pr-8">
+                Si creés que el amor se compra en jugueterías
+              </h4>
+              <p className="text-[#4b5563] text-xs sm:text-sm font-semibold mt-2 leading-relaxed">
+                No es para vos si creés que para entretener a un niño se necesitan juguetes chinos artificiales caros de plástico con luces estridentes. Este material es para abuelas que saben que el recuerdo más valioso es tu tiempo, tu ternura y tus historias.
+              </p>
+            </div>
+
+            <div className="bg-white border-2 border-stone-200 p-6 rounded-3xl shadow-xs relative">
+              <span className="text-red-500 font-extrabold text-2xl absolute top-5 right-5 select-none">❌</span>
+              <h4 className="font-serif text-lg font-black text-brand-text pr-8">
+                Si buscás un curso o videos eternos y aburridos
+              </h4>
+              <p className="text-[#4b5563] text-xs sm:text-sm font-semibold mt-2 leading-relaxed">
+                No es para vos si querés un programa teórico larguísimo que te robe horas de tu tarde libre. Ofrecemos herramientas prácticas y rápidas, organizadas de forma visual para que en 2 minutos elijas una actividad y se pongan a jugar.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center bg-emerald-50 rounded-2xl p-6 border-2 border-emerald-200 border-dashed max-w-2xl mx-auto">
+            <p className="text-[#047857] text-sm sm:text-base font-black leading-relaxed">
+              👉 En cambio, si querés ser esa abuela compinche de la que hablen con orgullo cuando crezcan, que cocine cosas ricas y los haga reír de verdad... ¡Estás en el lugar indicado!
+            </p>
+            <div className="mt-4">
+              <a
+                href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#10b981] hover:bg-[#059669] text-white font-sans font-black text-xs sm:text-sm px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-transform hover:scale-[1.02] active:scale-[0.98] inline-flex items-center gap-2 uppercase no-underline"
+              >
+                <span>¡SÍ, TOTALMENTE! ESTE KIT ES PARA MÍ</span>
+                <ArrowRight className="w-4 h-4 text-white" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PRECIO CON ANCLAJE (ANCLADO DE EMOCIÓN) */}
       <section id="comprar" className="py-20 px-4 bg-brand-bg text-brand-text text-center relative overflow-hidden border-t border-brand-border">
         {/* Safe frame border circles */}
@@ -484,9 +707,40 @@ export default function App() {
         <div className="absolute -right-20 bottom-10 w-96 h-96 bg-brand-beige/50 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="max-w-2xl mx-auto relative bg-white border-4 border-brand-orange p-6 sm:p-12 rounded-[40px] shadow-lg">
-          <span className="bg-brand-orange text-white text-xs uppercase tracking-widest font-black px-4 py-1.5 rounded-full inline-block mb-4 shadow-xs">
+          <span className="bg-brand-orange text-white text-xs uppercase tracking-widest font-black px-4 py-1.5 rounded-full inline-block mb-3 shadow-xs">
             PRECIO FINAL CONGELADO POR HOY
           </span>
+
+          {/* REAL TIME SCARCITY COUNTDOWN TIMER */}
+          <div className="bg-yellow-50 border-2 border-yellow-350 rounded-2xl p-4 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4 max-w-md mx-auto font-sans">
+            <div className="flex items-center gap-2.5 text-stone-900">
+              <Clock className="w-5 h-5 text-brand-orange shrink-0 animate-pulse" />
+              <div className="text-left">
+                <p className="text-[10px] font-black uppercase tracking-wider text-brand-orange">Cupo de descuento exclusivo</p>
+                <p className="text-[11px] font-bold text-stone-700 leading-snug">El precio de $5.990 y los 3 bonos de regalo expiran hoy en:</p>
+              </div>
+            </div>
+            <div className="flex gap-1.5 font-mono text-center shrink-0">
+              <div className="bg-stone-950 text-white rounded-md p-1.5 min-w-[38px] shadow-sm">
+                <span className="block text-xs font-black">{String(timeLeft.hours).padStart(2, '0')}</span>
+                <span className="text-[8px] uppercase font-black text-stone-400">hs</span>
+              </div>
+              <span className="text-stone-900 font-extrabold text-sm self-center">:</span>
+              <div className="bg-stone-950 text-white rounded-md p-1.5 min-w-[38px] shadow-sm">
+                <span className="block text-xs font-black">{String(timeLeft.minutes).padStart(2, '0')}</span>
+                <span className="text-[8px] uppercase font-black text-stone-400">min</span>
+              </div>
+              <span className="text-stone-900 font-extrabold text-sm self-center">:</span>
+              <div className="bg-stone-950 text-white rounded-md p-1.5 min-w-[38px] shadow-sm">
+                <span className="block text-xs font-black">{String(timeLeft.seconds).padStart(2, '0')}</span>
+                <span className="text-[8px] uppercase font-black text-stone-400">seg</span>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-[10px] sm:text-xs text-brand-orange font-black uppercase tracking-widest mb-4 flex items-center justify-center gap-1.5 bg-yellow-100/60 py-1.5 px-4 rounded-full max-w-sm mx-auto border border-yellow-250/50">
+            🚨 Sólo quedan 14 copias disponibles de esta oferta
+          </p>
 
           <h3 className="font-serif text-3xl sm:text-4xl text-brand-text font-black leading-tight">
             Una inversión ínfima para recuerdos eternos
@@ -546,6 +800,243 @@ export default function App() {
             <div className="flex flex-col items-center">
               <span className="text-brand-orange text-2xl mb-1">🛡️</span>
               <span>Compra Segura</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECCIÓN NUEVA: GARANTÍA FUERTE (ELIMINACIÓN DE RIESGO COLD-START) */}
+      <section id="garantia" className="py-16 px-4 bg-gradient-to-b from-[#FAF8F5] to-white border-b border-[#FAF2E5]">
+        <div className="max-w-3xl mx-auto font-sans relative">
+          <div className="bg-white border-4 border-[#10b981] rounded-[40px] p-6 sm:p-10 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center gap-8">
+            
+            {/* Visual badge and design decor */}
+            <div className="shrink-0 flex flex-col items-center justify-center text-center">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-emerald-50 border-4 border-emerald-400 flex items-center justify-center text-emerald-600 shadow-inner relative animate-pulse">
+                <ShieldCheck className="w-12 h-12 sm:w-14 sm:h-14 stroke-[2]" />
+              </div>
+              <span className="text-[10px] text-emerald-700 font-black tracking-widest uppercase mt-3 block">Riesgo 100% Cero</span>
+            </div>
+
+            {/* Explanation copy block */}
+            <div className="flex-1 space-y-4">
+              <span className="bg-[#10b981] text-white text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full inline-block">
+                Sello de Tranquilidad Abuela Feliz
+              </span>
+              <h3 className="font-serif text-xl sm:text-2xl font-black text-stone-900 leading-snug">
+                Garantía Sonrisa Asegurada de 30 Días
+              </h3>
+              <p className="text-stone-700 text-xs sm:text-sm leading-relaxed font-semibold">
+                Quiero que compres con total seguridad de madre y abuela. Probá el material entero, hacé las recetas y compartí las manualidades. Si en el transcurso de los primeros 30 días sentís que tus nietos no dejaron de jugar cansados y con una sonrisa, o simplemente sentís que no era para vos, mandanos un e-mail y te devolvemos el 100% del dinero invertido. 
+              </p>
+              <p className="text-stone-800 text-xs font-black italic">
+                No te pediremos explicaciones, ni papeleos. Cuidar tus recuerdos familiares es mi prioridad número uno.
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Estratégico 2 (Después de la garantía) */}
+          <div className="mt-10 text-center">
+            <a
+              href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex flex-col items-center justify-center bg-emerald-200 hover:bg-emerald-300 text-stone-900 font-sans font-black text-sm sm:text-base px-8 py-5 rounded-2xl shadow-xl border-2 border-emerald-400 hover:shadow-2xl transition-all transform hover:scale-[1.03] uppercase cursor-pointer no-underline animate-attention gap-1.5"
+            >
+              <div className="flex items-center gap-2">
+                <span>🛒 PROBAR EL KIT COMPLETO DE FORMA DIRECTA Y SEGURA</span>
+                <ArrowRight className="w-5 h-5 text-emerald-700 shrink-0 animate-bounce" />
+              </div>
+              <span className="bg-yellow-300 text-stone-950 font-black text-xs sm:text-sm px-4 py-1.5 rounded-full shadow-md tracking-wider border border-yellow-400 inline-block mt-1">
+                Adquirilo ahora por solo $5.990 pesos argentinos
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* SECCIÓN NUEVA: MANEJO DE OBJECIONES - PREGUNTAS FRECUENTES (FAQ) */}
+      <section id="preguntas-frecuentes" className="py-16 px-4 bg-white border-b border-brand-border text-brand-text">
+        <div className="max-w-3xl mx-auto font-sans">
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-1.5 bg-brand-sand text-brand-orange text-xs uppercase tracking-wider font-black px-3.5 py-1.5 rounded-full border border-brand-orange/20">
+              <HelpCircle className="w-4 h-4 text-brand-orange" />
+              <span>Preguntas Frecuentes</span>
+            </span>
+            <h2 className="font-serif text-2xl sm:text-4xl text-brand-text font-black mt-3">
+              ¿Tenés alguna duda? Te la respondemos de abuela a abuela
+            </h2>
+            <p className="text-[#4b5563] text-sm sm:text-base font-semibold mt-2">
+              Queremos que des este paso con absoluta tranquilidad y confianza.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "¿Cómo accedo al manual una vez realizado el pago?",
+                a: "Al concretar el pago mediante Mercado Pago o tarjeta, nuestro sistema automático te enviará un e-mail inmediato con el Kit Digital en formato PDF. Podés descargarlo al instante y usarlo desde cualquier celular, tablet o computadora, o imprimirlo si lo preferís en papel físico."
+              },
+              {
+                q: "¿Y si no sé cocinar o nunca hice manualidades?",
+                a: "No te preocupes en lo absoluto. El manual está escrito con explicaciones súper sencillas paso a paso, con letra grande y clara, pensado justamente para no requerir experiencia previa. Todo se elabora con utensilios básicos que ya tenés en la cocina común y con materiales simples del hogar (como cartoncitos de huevos o rollos de cartón)."
+              },
+              {
+                q: "¿Qué pasa si tengo poco tiempo o los chicos vienen solo un rato por la tarde?",
+                a: "¡Está pensado justamente para eso! Cada receta y actividad tiene un indicador de tiempo estimado para organizarte rápido. Hay ideas exprés que podés resolver en tan solo 15 o 20 minutos, perfectas para visitas cortas o meriendas rápidas después del colegio."
+              },
+              {
+                q: "¿A partir de qué edad sirve para mis nietos?",
+                a: "El material incluye actividades ideales para chicos de entre 3 y 12 años. Hay tareas muy simples para los más pequeños (como armar animalitos de fruta con gajitos de mandarina) y desafíos creativos para los de edad escolar o preadolescentes."
+              },
+              {
+                q: "¿Realmente ayuda a que dejen el celular?",
+                a: "Sí, de forma natural y orgánica. Los niños no reniegan de dejar las pantallas cuando tienen una alternativa interactiva donde se sienten protagonistas reales. El olorcito a budín casero caliente, las manitos repletas de masa y crear sus propios juguetes despiertan su curiosidad creativa voluntaria."
+              },
+              {
+                q: "¿Los ingredientes de las recetas son costosos o difíciles de conseguir?",
+                a: "Para nada. Seleccionamos recetas económicas con ingredientes cotidianos que solés tener en tu casa o conseguís en el almacén de tu barrio (harina, huevos, azúcar, limones, manzanas). No vas a tener que gastar de más."
+              },
+              {
+                q: "¿Es solo para abuelas o también lo pueden usar abuelos, mamás o papás?",
+                a: "¡Por supuesto que sí! Aunque lo escribí con el corazón pensando en la complicidad única de las abuelas, el material es 100% disfrutable por abuelos, tíos, papás, mamás o cualquier persona dispuesta a regalarles una tarde de desconexión digital de alta calidad."
+              },
+              {
+                q: "¿Cómo funciona la Garantía si el material no me resulta?",
+                a: "Es una Garantía Sonrisa Asegurada de 30 días enteros. Si por cualquier motivo sentís que tus nietas o nietos no se divirtieron o el manual no cumplió tu expectativa, nos mandás un mensaje directo por correo y te reintegramos el 100% de la inversión. Sin letra chica ni preguntas."
+              }
+            ].map((faq, idx) => (
+              <div 
+                key={idx} 
+                className="bg-[#FAF8F5] border-2 border-brand-orange/20 rounded-2xl overflow-hidden shadow-xs hover:border-brand-orange/50 transition-all duration-300"
+              >
+                <button
+                  type="button"
+                  onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
+                  className="w-full text-left p-5 flex justify-between items-center gap-4 cursor-pointer focus:outline-none bg-transparent"
+                >
+                  <span className="font-serif font-black text-brand-text text-sm sm:text-base pr-2">
+                    {faq.q}
+                  </span>
+                  <div className="bg-white border-2 border-brand-orange/30 p-1 rounded-full shrink-0">
+                    {activeFaq === idx ? (
+                      <ChevronUp className="w-4 h-4 text-brand-orange" />
+                    ) : (
+                      <ChevronDown className="w-4 h-4 text-brand-orange" />
+                    )}
+                  </div>
+                </button>
+                
+                {activeFaq === idx && (
+                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm font-semibold text-[#4b5563] leading-relaxed border-t border-dashed border-brand-orange/10 animate-fade-in bg-white">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Estratégico 3 (En medio o final del FAQ) */}
+          <div className="mt-12 text-center">
+            <a
+              href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex flex-col items-center justify-center bg-emerald-200 hover:bg-emerald-300 text-stone-900 font-sans font-black text-sm sm:text-base px-8 py-5 rounded-2xl shadow-xl border-2 border-emerald-400 hover:shadow-2xl transition-all transform hover:scale-[1.03] uppercase cursor-pointer no-underline animate-attention gap-1.5"
+            >
+              <div className="flex items-center gap-2">
+                <span>⭐ ¡DALE LA BIENVENIDA A UNA TARDE DIFERENTE!</span>
+                <ArrowRight className="w-5 h-5 text-emerald-700 shrink-0 animate-bounce" />
+              </div>
+              <span className="bg-yellow-300 text-stone-950 font-black text-xs sm:text-sm px-4 py-1.5 rounded-full shadow-md tracking-wider border border-yellow-400 inline-block mt-1">
+                CONSEGUIR TU KIT COMPLETO POR $5.990
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* SECCIÓN NUEVA: CIERRE EMOCIONAL POTENTE (CARTA PERSONAL DE ABUELA A ABUELA) */}
+      <section className="py-16 px-4 bg-zinc-50 border-b border-brand-border text-brand-text">
+        <div className="max-w-2xl mx-auto font-sans text-stone-900">
+          <div className="bg-white border-2 border-brand-orange/30 rounded-[32px] p-8 sm:p-12 shadow-sm relative overflow-hidden">
+            {/* Decors like a real letter */}
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-orange via-yellow-400 to-[#10b981]"></div>
+            
+            <div className="flex items-center gap-2 mb-6">
+              <span className="text-2xl">✍️</span>
+              <span className="text-xs uppercase font-black tracking-widest text-brand-orange">Una última reflexión sincera</span>
+            </div>
+
+            <h3 className="font-serif text-2xl sm:text-3xl font-black text-brand-text mb-6 leading-tight">
+              De abuela a abuela: La infancia de nuestros nietos dura una sola primavera...
+            </h3>
+
+            <div className="space-y-4 text-xs sm:text-sm font-semibold text-stone-700 leading-relaxed font-sans">
+              <p>
+                Querida abuela,
+              </p>
+              <p>
+                Si estás leyendo esto, es porque realmente querés regalarle lo mejor a tus nietas y nietos. Dejame decirte algo que ya sabés en el fondo: <strong>the time flies—el tiempo no se detiene</strong>. Las tardes de risas, de amasar juntos y de jugar sentados en el suelo de la cocina duran apenas un par de años.
+              </p>
+              <p>
+                En un abrir y cerrar de ojos, van a ser adolescentes, van a tener sus propios celulares pegados a la mano todo el día y esas tardes de meriendas mágicas habrán quedado atrás.
+              </p>
+              <p>
+                Hoy tenés en tus manos el poder de escribir sus mejores recuerdos. Podés dejarlos pasar la tarde de hoy como zombies frente a una pantalla fría... O podés abrir la puerta a un mundo de sabor, ensuciarse las manos con harina, amasar tímidamente su propio budín y dibujar animales con pedacitos de fruta mientras te cuentan cómo les fue en la escuela.
+              </p>
+              <p>
+                La inversión de <strong>$5.990 ARS</strong> es ínfima, menos de lo que sale un delivery de pizza fría que se olvida en media hora. Pero las sonrisas, el perfume del limón en el horno y la complicidad que construyas con ellos hoy... <strong>eso te lo aseguro, va a durar para siempre en sus corazones.</strong>
+              </p>
+              <p className="font-black text-stone-900 mt-6 italic">
+                Te espero adentro del kit para empezar a amasar recuerdos mágicos hoy mismo.
+              </p>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-dashed border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-brand-orange/15 flex items-center justify-center font-serif text-xl font-black text-brand-orange">
+                  👵
+                </div>
+                <div>
+                  <span className="font-serif font-black text-brand-text text-sm sm:text-base leading-none block">Meri, la Abuela Práctica</span>
+                  <span className="text-[10px] text-stone-500 font-extrabold uppercase mt-1 block">Creadora de Meriendas Mágicas</span>
+                </div>
+              </div>
+              
+              {/* Hand signature mockup */}
+              <div className="font-serif text-emerald-700 font-black italic text-lg sm:text-xl transform -rotate-3 border-b-2 border-brand-orange/40 pb-1 select-none">
+                Con todo mi cariño ♥
+              </div>
+            </div>
+          </div>
+
+          {/* ULTIMO LLAMADO A LA ACCIÓN CON URGENCIA EXTREMA */}
+          <div className="mt-12 text-center space-y-4">
+            <h4 className="font-serif text-lg sm:text-xl text-stone-900 font-black leading-snug">
+              🚨 Última oportunidad de congelar el precio por hoy
+            </h4>
+            <div className="bg-yellow-50 border border-yellow-250 p-4 rounded-2xl max-w-lg mx-auto text-center">
+              <p className="text-[11px] leading-relaxed text-stone-700 font-bold">
+                Quedan muy pocas copias baratas con los <strong>3 regalos especiales gratis</strong>. El descuento exclusivo de $5.990 expira al finalizar el día de hoy de forma automática.
+              </p>
+            </div>
+
+            <div className="pt-2">
+              <a
+                href="https://h8v1v6-g7.myshopify.com/cart/51152331538665:1?checkout"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-col items-center justify-center bg-emerald-200 hover:bg-emerald-300 text-stone-900 font-sans font-black text-sm sm:text-base px-8 py-5 rounded-2xl shadow-xl border-2 border-emerald-400 hover:shadow-2xl transition-all transform hover:scale-[1.03] uppercase cursor-pointer no-underline animate-attention gap-1.5 w-full max-w-xl"
+              >
+                <div className="flex items-center gap-2">
+                  <span>👵 AGREGAR EL KIT DE MERIENDAS A MI CORREO AHORA</span>
+                  <ArrowRight className="w-5 h-5 text-emerald-700 shrink-0" />
+                </div>
+                <span className="bg-yellow-300 text-stone-950 font-black text-xs sm:text-sm px-4 py-1.5 rounded-full shadow-md tracking-wider border border-yellow-400 inline-block mt-1">
+                  PRECIO congelado hoy: $5.990 (Ahorrás 50%)
+                </span>
+              </a>
             </div>
           </div>
         </div>
